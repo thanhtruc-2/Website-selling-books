@@ -1,0 +1,1549 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@using TECH.Areas.Admin.Models
+@{
+    var userString = Context.Session.GetString("UserInfor");
+    var user = new UserModelView();
+    if (userString != null)
+    {
+        user = JsonConvert.DeserializeObject<UserModelView>(userString);
+    }
+}
+
+<!doctype html>
+<html class="no-js" lang="vi">
+<!--<![endif]-->
+<head>
+    <!-- Basic page needs ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        WEBSITE BÁN SÁCH ONLINE
+    </title>
+    <link rel="canonical" href="https://cachep.vn/">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#00ab9f">
+  
+    @* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> *@
+   @* <link rel="stylesheet" href="/public/admin/css/bootstrap.css">
+    <link rel="stylesheet" href="/website/plugins/animate/animate.min.css">
+    <link href='/public/user/css/timber.scss.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href='/public/user/css/suplo-style.scss.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href='/public/user/css/owl.carousel.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href='/public/user/css/owl.theme.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href="~/web/devvn-shortcode-reviews.css" rel="stylesheet" />*@
+     <!-- CSS ================================================== -->
+    @*<link rel="stylesheet" href="/public/admin/css/bootstrap.css">*@
+    <link href='/public/user/css/timber.scss.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href='/public/user/css/suplo-style.scss.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href='/public/user/css/owl.carousel.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href='/public/user/css/owl.theme.css?v=534' rel='stylesheet' type='text/css' media='all' />
+    <link href='/public/user/css/owl.transitions.css?v=534' rel='stylesheet' type='text/css' media='all' />
+@*
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>*@
+
+    <link href="~/web/devvn-shortcode-reviews.css" rel="stylesheet" />
+    
+    <script type='text/javascript'>
+        @RenderSection("Styles", required: false)
+
+    </script>
+    <style>
+        .modal-content {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: .3rem;
+            outline: 0;
+        }
+
+        .modal-header {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+            border-top-left-radius: .3rem;
+            border-top-right-radius: .3rem;
+            position: relative;
+        }
+
+        .modal-dialog {
+            position: relative;
+            width: auto;
+            margin: .5rem;
+            pointer-events: none;
+        }
+
+        .modal-title {
+            margin-bottom: 0;
+            line-height: 1.5;
+            font-size: 21px;
+        }
+
+        .modal-footer > :not(:last-child) {
+            margin-right: .25rem;
+        }
+
+        .modal-footer > :not(:first-child) {
+            margin-left: .25rem;
+        }
+
+        .modal-footer {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            padding: 1rem;
+            /*border-top: 1px solid #e9ecef;*/
+        }
+        .is-moved-by-drawer{
+            will-change:unset !important;
+        }
+        .close:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+
+        .modal-header .close {
+            padding: 1rem;
+            margin: -1rem -1rem -1rem auto;
+        }
+
+            .modal-header .close span {
+                font-size: 29px;
+            }
+
+        button.close {
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+            -webkit-appearance: none;
+        }
+
+        .close {
+            float: right;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .5;
+        }
+        .modal-footer{
+
+        }
+
+        #titleModal{
+            /*text-transform: capitalize;*/
+            text-align: center;
+            font-size: 21px;
+        }
+        .close span{
+            font-size: 25px;
+        }
+        .spinner-border {
+            background: url('/image-side/loading.png');
+        }
+
+        @@media (min-width: 992px) .modal-lg {
+            max-width: 800px;
+        }
+
+        @@media (min-width: 576px) .modal-sm {
+            max-width: 300px;
+        }
+
+        @@media (min-width: 576px) .modal-dialog {
+            max-width: 500px;
+            margin: 1.75rem auto;
+        }
+
+
+        .custom-nav.not-index {
+            border-bottom: 2px solid #00ab9f;
+        }
+
+       /*  .custom-nav .main-navbar {
+            background: #ffffff;
+        } */
+
+            .custom-nav .main-navbar .megamenu-wrapper {
+                position: relative;
+            }
+
+                .custom-nav .main-navbar .megamenu-wrapper.not-index:hover .megamenu-body {
+                    display: inline-block;
+                }
+
+                .custom-nav .main-navbar .megamenu-wrapper.not-index .megamenu-body {
+                    display: none;
+                    -webkit-box-shadow: -1px 3px 12px -1px rgba(0, 0, 0, 0.3);
+                    -moz-box-shadow: -1px 3px 12px -1px rgba(0, 0, 0, 0.3);
+                    box-shadow: -1px 3px 12px -1px rgba(0, 0, 0, 0.3);
+                }
+
+                    .custom-nav .main-navbar .megamenu-wrapper.not-index .megamenu-body > ul > li {
+                        background: white !important;
+                    }
+
+                        .custom-nav .main-navbar .megamenu-wrapper.not-index .megamenu-body > ul > li > ul > li {
+                            background: white !important;
+                        }
+
+                            .custom-nav .main-navbar .megamenu-wrapper.not-index .megamenu-body > ul > li > ul > li > ul > li {
+                                background: white !important;
+                            }
+
+                .custom-nav .main-navbar .megamenu-wrapper .megamenu-head {
+                    /* background: #00ab9f; */
+                    padding: 10px;
+                    /* color: #fff; */
+                    color: #00ab9f;
+                }
+
+                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    z-index: 2;
+                    width: 100%;
+                }
+
+                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul {
+                        margin: 0;
+                        width: 100%;
+                    }
+
+                        .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li {
+                            display: block;
+                            margin: 0;
+                            padding: 0 15px;
+                            background: rgba(255, 255, 255, 0.9);
+                        }
+
+                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li:hover {
+                                background: white;
+                            }
+
+                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li:last-child > a {
+                                border-bottom: 0;
+                            }
+
+                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu:hover > ul {
+                                display: inline-block;
+                            }
+
+                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul {
+                                display: none;
+                                margin: 0;
+                                height: 455px;
+                                width: 400%;
+                                position: absolute;
+                                top: 0;
+                                left: 100%;
+                                z-index: 2;
+                                background: #ffffff;
+                                padding: 15px;
+                                box-shadow: 4px 0 5px rgba(0, 0, 0, 0.2);
+                            }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-link-lv2 > a {
+                                    color: #333333;
+                                }
+
+                                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-link-lv2 > a:hover {
+                                        color: #00ab9f;
+                                    }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-link-lv3-wrapper {
+                                    padding-bottom: 5px;
+                                    margin-bottom: 10px;
+                                    border-bottom: 1px dashed #f2f2f2;
+                                }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-link-lv3 {
+                                    display: inline-block;
+                                    margin: 0 5px 5px 0;
+                                }
+
+                                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-link-lv3 > span {
+                                        display: inline-block;
+                                        color: #b3b3b3;
+                                        margin-right: 5px;
+                                    }
+
+                                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-link-lv3 > a {
+                                        display: inline-block;
+                                        color: #666666;
+                                    }
+
+                                        .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-link-lv3 > a:hover {
+                                            color: #333333;
+                                        }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-memgamenu-img {
+                                    margin-bottom: 15px;
+                                }
+
+                                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-memgamenu-img a {
+                                        display: block;
+                                        overflow: hidden;
+                                    }
+
+                                        .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-memgamenu-img a img {
+                                            width: 100%;
+                                            transform: scale(1);
+                                        }
+
+                                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-megamenu > ul .li-memgamenu-img a img:hover {
+                                                transform: scale(1.05);
+                                            }
+
+                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown {
+                                position: relative;
+                            }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown:hover > ul {
+                                    display: inline-block;
+                                }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul {
+                                    margin: 0;
+                                    display: none;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 100%;
+                                    width: 100%;
+                                    z-index: 2;
+                                    box-shadow: 4px 0 5px rgba(0, 0, 0, 0.2);
+                                }
+
+                                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li {
+                                        display: block;
+                                        margin: 0;
+                                        padding: 0 15px;
+                                        background: rgba(255, 255, 255, 0.9);
+                                    }
+
+                                        .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li:hover {
+                                            background: white;
+                                        }
+
+                                        .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li.li-dropdown {
+                                            position: relative;
+                                        }
+
+                                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li.li-dropdown:hover > ul {
+                                                display: inline-block;
+                                            }
+
+                                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li.li-dropdown > ul {
+                                                margin: 0;
+                                                display: none;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 100%;
+                                                width: 100%;
+                                                z-index: 2;
+                                                box-shadow: 4px 0 5px rgba(0, 0, 0, 0.2);
+                                            }
+
+                                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li.li-dropdown > ul > li {
+                                                    display: block;
+                                                    margin: 0;
+                                                    padding: 0 15px;
+                                                    background: rgba(255, 255, 255, 0.9);
+                                                }
+
+                                                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li.li-dropdown > ul > li:hover {
+                                                        background: white;
+                                                    }
+
+                                                    .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li.li-dropdown > ul > li > a {
+                                                        position: relative;
+                                                        display: block;
+                                                        padding: 10px 0;
+                                                        border-bottom: 1px dotted #f2f2f2;
+                                                        color: #333333;
+                                                    }
+
+                                                        .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li.li-dropdown > ul > li > a:hover {
+                                                            color: #00ab9f;
+                                                        }
+
+                                        .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li > a {
+                                            position: relative;
+                                            display: block;
+                                            padding: 10px 0;
+                                            border-bottom: 1px dotted #f2f2f2;
+                                            color: #333333;
+                                        }
+
+                                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li > a svg {
+                                                position: absolute;
+                                                right: 0;
+                                                top: calc(50% - 7px);
+                                            }
+
+                                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li.li-dropdown > ul > li > a:hover {
+                                                color: #00ab9f;
+                                            }
+
+                            .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li > a {
+                                position: relative;
+                                display: block;
+                                padding: 10px 0;
+                                border-bottom: 1px dotted #f2f2f2;
+                                color: #333333;
+                            }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li > a svg {
+                                    position: absolute;
+                                    right: 0;
+                                    top: calc(50% - 7px);
+                                }
+
+                                .custom-nav .main-navbar .megamenu-wrapper .megamenu-body > ul > li > a:hover {
+                                    color: #00ab9f;
+                                }
+
+        .custom-nav .no-bullets{
+            min-width: 170px;
+        }
+
+            .custom-nav .main-navbar .navbar-list {
+                margin: 0;
+                padding: 0 15px;
+            }
+
+                .custom-nav .main-navbar .navbar-list > li {
+                    display: inline-block;
+                    margin: 0 15px 0 0;
+                }
+
+                    .custom-nav .main-navbar .navbar-list > li:last-child {
+                        margin: 0;
+                    }
+
+                    .custom-nav .main-navbar .navbar-list > li > a {
+                        display: inline-block;
+                        height: 34px;
+                        line-height: 34px;
+                        color: #333333;
+                    }
+
+                        .custom-nav .main-navbar .navbar-list > li > a:hover {
+                            color: #00ab9f;
+                        }
+
+            .custom-nav .main-navbar .main-navbar-intro-wrapper {
+                height: 34px;
+                position: relative;
+            }
+
+                .custom-nav .main-navbar .main-navbar-intro-wrapper.not-index {
+                    display: none;
+                }
+
+                .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+                    background: #fff;
+                    box-shadow: 2px 0 7px rgba(0, 0, 0, 0.1);
+                    height: 455px;
+                    padding: 15px;
+                }
+
+                    .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-img {
+                        margin-bottom: 15px;
+                    }
+
+                    .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro h4 {
+                        color: #333333;
+                        margin: 0 0 5px;
+                    }
+
+                    .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-account {
+                        margin-bottom: 15px;
+                    }
+
+                        .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-account > a {
+                            display: inline-block;
+                            color: #333333;
+                        }
+
+                            .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-account > a:hover {
+                                color: #00ab9f;
+                            }
+
+                        .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-account > span {
+                            display: inline-block;
+                            margin: 0 5px;
+                            color: #333333;
+                        }
+
+                    .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-guide {
+                        margin-bottom: 15px;
+                    }
+
+                        .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-guide > a {
+                            display: inline-block;
+                            padding: 5px 10px;
+                            color: #00ab9f;
+                            border: 2px solid #00ab9f;
+                        }
+
+                            .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-guide > a:hover {
+                                color: #fff;
+                                background: #00ab9f;
+                            }
+
+                    .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-title {
+                        margin: 15px 0 5px;
+                        color: #666666;
+                    }
+
+                    .custom-nav .main-navbar .main-navbar-intro-wrapper .main-navbar-intro .mni-desc {
+                        color: #999999;
+                    }
+
+        /* custome */
+        .format-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            padding: 60px 0px;
+        }
+
+            .format-box .heading-section {
+                text-align: center;
+                width: 400px;
+            }
+
+            .format-box .form-group {
+                margin-bottom: 20px;
+            }
+
+        .format-box .col-md-8{
+            width: 100%;
+        }
+
+        .box-section {
+            display: inline-block;
+            background: #fff;
+            width: 100%;
+            padding: 40px 0px;
+            margin-top: unset !important;
+        }
+            .box-section .box-content-custome {
+                width: 50%;
+                margin: auto;
+            }
+
+        .box-section .box-content-custome h2{
+                margin-bottom: 30px;
+        }
+        .float-left{
+            float: left;
+        }
+        .custom-boxsection{
+            display: inline-block;
+            width: 100%;
+            background: #fff;
+            padding: 40px;
+        }
+
+
+        /* .custom-nav #owl-home-main-slider .item a {
+            display: block;
+        }
+
+            .custom-nav #owl-home-main-slider .item a img {
+                width: 100%;
+            }
+
+        .custom-nav #owl-home-main-slider .owl-controls {
+            margin: 0;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+            .custom-nav #owl-home-main-slider .owl-controls .owl-pagination {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 12px;
+            }
+
+                .custom-nav #owl-home-main-slider .owl-controls .owl-pagination .owl-page {
+                    transform: translateY(2px);
+                }
+
+                    .custom-nav #owl-home-main-slider .owl-controls .owl-pagination .owl-page.active span {
+                        background: #00ab9f;
+                    }
+
+                    .custom-nav #owl-home-main-slider .owl-controls .owl-pagination .owl-page span {
+                        background: #fff;
+                        opacity: 1;
+                    }
+        .custom-nav .main-navbar .megamenu-wrapper {
+            position: relative;
+        } */
+        .product-item .product-title{
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: left !important;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+        }
+
+        .product-item .product-price > span.original-price {
+            font-size: 15px;
+        }
+
+        .product-item .product-price > span.current-price {
+            font-size: 15px;
+        }
+        .collection-sorting-wrapper > .wrapper > .inner .col-sorting select{
+            background: #fff !important;
+            color:unset !important;
+            font-size:15px;
+        }
+
+        .star-rating-formats{
+            text-align: center;
+            margin: 10px 0px;
+        }
+
+        .custom-height h2 {
+            text-transform: uppercase;
+            color: #00ab9f;
+            font-weight: bold;
+        }
+        .custom-height{
+            padding: 40px 0px;
+            display: inline-block;
+            width: 100%;
+        }
+        .custom-display-flex{
+            display: inline-flex;
+    width: 100%;
+    justify-content: center;
+        }
+        .btn-login{
+            border-radius: 5px;
+    background-color: #28a745;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+        }
+        .btn-format{
+                    width: 100%;
+        }
+                .product-small .product-title a {
+                white-space: initial;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.5;
+    color: black;
+        }
+      .product-small  .title-wrapper{
+              padding: 15px 0px;
+      }
+        .product-small  .title-wrapper div{
+              font-size: 15px;
+             margin-bottom: 10px;
+      }
+      .btn-danger{
+          background-color: red;
+      }
+        
+    </style>
+
+</head>
+<body id="ghe-ngay-nha-sach-ca-chep-truc-tuyen-cachep-vn" class=" template-index">
+    <div id="fb-root"></div>
+    <div id="NavDrawer" class="drawer drawer--right">
+        <!-- //mobile-nav -->
+    </div>
+    <div id="CartDrawer" class="drawer drawer--left">
+        <div class="drawer__header">
+            <div class="drawer__title h3">Giỏ hàng</div>
+            <div class="drawer__close js-drawer-close">
+                <button type="button" class="icon-fallback-text">
+                    <span class="icon icon-x" aria-hidden="true"></span>
+                    <span class="fallback-text">"Đóng"</span>
+                </button>
+            </div>
+        </div>
+        <div id="CartContainer"></div>
+    </div>
+    <header id="header">
+        <div class="header-desktop medium--hide small--hide">
+            <div class="header-top">
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="row">
+                            <div class="grid__item large--two-thirds" style="width:100%">
+                                <ul class="hdt-right-menu no-bullets text-right">
+                                    @if (user != null && user.role.HasValue && user.role.Value == 1)
+                                    {
+                                        /* <li>|</li> */
+                                       /*  <li><a class="btn-dn" href="/gio-hang"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Giỏ hàng</a></li> */
+                                      /*   <li>|</li> */
+                                        <li class="">
+                                          @*   <a href="#" id=" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+                                                @user.full_name
+                                            </a>                                         
+                                            <div aria-labelledby="dropdown04" class="" style="left: -45px;">
+                                                <a href="/thong-tin-ca-nhan" class="">Thông tin cá nhân</a>
+                                                <a href="/lich-su-don-hang" class="">Lịch sử đơn hàng</a>
+                                                <a href="/doi-mat-khau" class="">Đổi mật khẩu</a>
+
+                                                <a href="/dang-xuat" class="">Đăng xuất</a>
+                                            </div> *@
+
+                                            <div class="custom-nav">
+                                                <div class="main-navbar ">
+                                                    <div class="megamenu-wrapper not-index">
+                                                        <div class="megamenu-head">
+                                                            <i class="fas fa-bars"></i>  @user.full_name
+                                                        </div>
+                                                        <div class="megamenu-body">
+                                                            <ul class="no-bullets" style="text-align: left;">
+                                                                <li class="li-dropdown">
+                                                                    <a href="/thong-tin-ca-nhan" class="">Thông tin cá nhân</a>
+                                                                </li>
+                                                                   <li class="li-dropdown">
+                                                                    <a href="/don-hang" class="">Đơn hàng</a>
+                                                                </li>
+                                                                <li class="li-dropdown">
+                                                                    <a href="/lich-su-don-hang" class="">Lịch sử đơn hàng</a>
+                                                                </li>                                                              
+                                                                <li class="li-dropdown">
+                                                                    <a href="/dang-xuat" class="">Đăng xuất</a>
+                                                                </li>                                                               
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                    else if (user != null && user.role.HasValue && user.role.Value == 0)
+                                    {
+                                       /* <li class="nav-item dropdown">
+                                            <a href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Quản trị viên </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdown05" style="left: -45px;">
+                                                <a href="/admin" class="dropdown-item">Trang quản trị</a>
+
+                                                <a href="/dang-xuat" class="dropdown-item">Đăng xuất</a>
+                                            </div>
+                                        </li>*/
+                                        <li>
+                                          <div class="custom-nav">
+                                                <div class="main-navbar ">
+                                                    <div class="megamenu-wrapper not-index">
+                                                        <div class="megamenu-head">
+                                                            <i class="fas fa-bars"></i>  Quản trị viên
+                                                        </div>
+                                                        <div class="megamenu-body">
+                                                            <ul class="no-bullets" style="text-align: left;">
+                                                                <li class="li-dropdown">
+                                                                    <a href="/admin" class="">Trang quản trị</a>
+                                                                </li>
+                                                                                                                           
+                                                                <li class="li-dropdown">
+                                                                    <a href="/dang-xuat" class="">Đăng xuất</a>
+                                                                </li>                                                               
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+
+                                            <a href="/dang-ky">Đăng Ký</a>
+                                        </li>
+                                        <li>|</li>
+                                        <li><a href="/dang-nhap">Đăng Nhập</a></li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="row" style="align-items: center;">
+                            <div class="col-sm-3">
+                                <div class="hdc-logo">
+                                    <h1>
+                                        <a href="/">
+                                            <img src="/image-side/log-new.jpg" alt="" / style="width: 150px;">
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="hdc-search-wrapper" style="margin-bottom: 0px;">
+                                    <div class="search-form-wrapper">
+                                         <div class="wpo-search">
+                                                <div class="wpo-search-inner">
+                                                    <div class="input-group">
+                                                        <input id="searchtext" name="q" id="s" maxlength="40" class="form-control input-search txt-search" type="text" size="20" placeholder="Bạn muốn mua gì?">
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" id="searchsubmit" class="btn-search-stl">Tìm kiếm</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+
+
+                                    <style>
+                                        .smart-search-wrapper > a.thumbs {
+                                            width: 24px;
+                                            display: inline-block;
+                                            padding: 0px;
+                                        }
+
+                                            .smart-search-wrapper > a.thumbs img {
+                                                position: absolute;
+                                                top: 0px;
+                                                width: 24px;
+                                                left: 0px;
+                                            }
+
+                                        .smart-search-wrapper {
+                                            position: absolute;
+                                            left: 0 !important;
+                                            right: 0 !important;
+                                            top: 100% !important;
+                                            background: #fff;
+                                            border: 1px solid rgb(215, 215, 215);
+                                            border-top: none;
+                                            z-index: 999;
+                                        }
+
+                                            .smart-search-wrapper > a {
+                                                width: calc(100% - 24px);
+                                                float: left;
+                                                text-overflow: ellipsis;
+                                                overflow: hidden;
+                                                white-space: pre;
+                                                color: #686767;
+                                                text-decoration: none;
+                                                height: 30px;
+                                                line-height: 30px;
+                                                font-size: 12px;
+                                                font-family: sans-serif;
+                                                padding: 0px 160px 0px 5px;
+                                                position: relative;
+                                            }
+
+                                                .smart-search-wrapper > a.select, .smart-search-wrapper > a:hover {
+                                                    background: -webkit-linear-gradient(left, #fff,#EAEAEA); /* For Safari 5.1 to 6.0 */
+                                                    background: -o-linear-gradient(left, #fff,#EAEAEA); /* For Opera 11.1 to 12.0 */
+                                                    background: -moz-linear-gradient(left, #fff,#EAEAEA ); /* For Firefox 3.6 to 15 */
+                                                    background: linear-gradient(left, #fff,#EAEAEA ); /* Standard syntax (must be last) */
+                                                    color: #000;
+                                                }
+
+                                                .smart-search-wrapper > a > span.price-search {
+                                                    position: absolute;
+                                                    right: 5px;
+                                                    top: 0px;
+                                                }
+                                    </style>
+                                </div>
+                            </div>
+                            <div class="col-sm-3" style="text-align: center;">
+                                <div class="hdc-cart-wrapper desktop-cart-wrapper">
+                                    <a class="hdc-cart hd-cart" href="/gio-hang">
+                                        Giỏ hàng của bạn <i class="fas fa-shopping-cart"></i>                                         
+                                    </a>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </header>
+    <div id="megamenu-navbar" class="not-index megamenu-navbar">
+        <div class="main-navbar medium--hide small--hide">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="grid mg-left-0" style="TEXT-ALIGN: CENTER;">
+                        <style>
+                            .megamenu-navbar .main-navbar .navbar-list > li {
+                                margin: 0 15px 0 15px;
+                            }
+
+                                .megamenu-navbar .main-navbar .navbar-list > li > a {
+                                    font-weight: bold;
+                                    color: #514949;
+                                }
+                        </style>
+                        <div class="grid__item pd-left0 large--eight-twelfths" style="width: 100%;">
+                            <ul class="navbar-list no-bullets">
+                                <li>
+                                    <a href="/">TRANG CHỦ</a>
+                                </li>
+                                @await Component.InvokeAsync("CategoryMenuComponent")                               
+                                <li>
+                                    <a href="/moi-nhat">SÁCH MỚI NHẤT</a>
+                                </li>
+                                <li>
+                                    <a href="/noi-bat">SÁCH NỔI BẬT</a>
+                                </li>
+                                <li>
+                                    <a href="/lien-he-voi-chung-toi">LIÊN HỆ</a>
+                                </li>
+                                <li>
+                                    <a href="/bai-viet">TIN TỨC</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*container*@
+
+
+
+
+
+
+    <div id="PageContainer" class="" style="">
+        <main class="main-content" role="main">
+            @RenderBody()
+
+        </main>
+    </div>
+
+    <div id="home-policy">
+        <div class="wrapper">
+            <div class="inner">
+                <div class="grid-uniform">
+                    <div class="grid__item large--one-quarter medium--one-half small--one-whole mg-bottom-10">
+                        <div class="hpolicy-item text-center">
+                            <img src="//theme.hstatic.net/1000363117/1000911694/14/hpolicy_img1.jpg?v=534" alt="Dịch vụ tận tâm" />
+                            <span>Dịch vụ tận tâm</span>
+                        </div>
+                    </div>
+                    <div class="grid__item large--one-quarter medium--one-half small--one-whole mg-bottom-10">
+                        <div class="hpolicy-item text-center">
+                            <img src="//theme.hstatic.net/1000363117/1000911694/14/hpolicy_img2.jpg?v=534" alt="Sản phẩm đa dạng" />
+                            <span>Sản phẩm đa dạng</span>
+                        </div>
+                    </div>
+                    <div class="grid__item large--one-quarter medium--one-half small--one-whole mg-bottom-10">
+                        <div class="hpolicy-item text-center">
+                            <img src="//theme.hstatic.net/1000363117/1000911694/14/hpolicy_img3.jpg?v=534" alt="Vận chuyển chu đáo" />
+                            <span>Vận chuyển chu đáo</span>
+                        </div>
+                    </div>
+                    <div class="grid__item large--one-quarter medium--one-half small--one-whole mg-bottom-10">
+                        <div class="hpolicy-item text-center">
+                            <img src="//theme.hstatic.net/1000363117/1000911694/14/hpolicy_img4.jpg?v=534" alt="Giá cả hợp lý" />
+                            <span>Giá cả hợp lý</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="ft-nav-wrapper">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="grid-uniform">
+                        <div class="grid__item large--two-tenths medium--one-third small--one-half">
+                            <div class="ft-nav">
+                                <h4>Liên kết nhanh</h4>
+                                <ul class="no-bullets">
+                                    <li>
+                                        <a href="javascript:void(0)">Sách Thiếu Nhi</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Sách Chữ Ký</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Sách Giới Hạn</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Văn Phòng Phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Sách Bán Chạy</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Combo Sách Hay</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Gợi Ý Cho Bạn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid__item large--two-tenths medium--one-third small--one-half">
+                            <div class="ft-nav">
+                                <h4>Các bộ sưu tập</h4>
+                                <ul class="no-bullets">
+                                    <li>
+                                        <a href="javascript:void(0)">Bút - Viết</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Dụng Cụ Học Sinh</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Sản Phẩm Về Giấy</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Dụng Cụ Văn Phòng</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Dụng Cụ Vẽ</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Sản Phẩm Điện Tử</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Văn Phòng Phẩm Khác</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid__item large--two-tenths medium--one-third small--one-half">
+                            <div class="ft-nav">
+                                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                                <ul class="no-bullets">
+                                    <li>
+                                        <a href="javascript:void(0)">Chính sách bảo mật</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Hướng dẫn mua hàng</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Phương thức thanh toán</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Phương thức vận chuyển</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Chính sách bảo hành</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Chính sách đổi trả</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid__item large--two-tenths medium--one-third small--one-half">
+                            <div class="ft-nav">
+                                <h4>Chăm sóc khách hàng</h4>
+                                <ul class="no-bullets">
+                                    <li>
+                                        <a href="javascript:void(0)">Liên hệ hỗ trợ</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Hệ thống cửa hàng</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Tin tuyển dụng</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid__item large--two-tenths medium--one-third small--one-half">
+                            <div class="ft-nav">
+                                <h4></h4>
+                                <ul class="no-bullets">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Popup */
+        .engo-popup {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            align-items: center;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            height: 0;
+            width: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: all 300ms ease-in-out;
+            -moz-transition: all 300ms ease-in-out;
+            -ms-transition: all 300ms ease-in-out;
+            -o-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+        }
+
+            .engo-popup.active {
+                visibility: visible;
+                opacity: 1;
+                top: 0 !important;
+                height: auto;
+                width: auto;
+            }
+
+            .engo-popup .overlay {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: rgba(0, 0, 0, 0.4);
+                position: fixed;
+                top: 0 !important;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: 0;
+                height: 0;
+            }
+
+            .engo-popup.active .overlay {
+                width: 100%;
+                height: 100%;
+            }
+
+            .engo-popup .content {
+                //max-width: 800px;
+                margin: 0 auto;
+                text-align: left;
+                position: relative;
+                //min-width: 490px;
+                -webkit-transition: all 300ms ease-in-out;
+                -moz-transition: all 300ms ease-in-out;
+                -ms-transition: all 300ms ease-in-out;
+                -o-transition: all 300ms ease-in-out;
+                transition: all 300ms ease-in-out;
+            }
+
+            .engo-popup.active .content {
+                max-height: 100%;
+            }
+
+        @@media screen and (min-width: 1200px) {
+            .engo-popup .content {
+                max-width: 1024px;
+                width: 900px;
+            }
+        }
+
+        #popup-newletter {
+            position: absolute;
+            right: 29px;
+            bottom: 60px;
+            width: 60%;
+        }
+
+            #popup-newletter h3 {
+                font-size: 22px;
+                color: #666;
+                margin: 0px 0px 10px;
+                padding: 8px 0px;
+                font-weight: normal;
+                text-transform: uppercase;
+            }
+
+            #popup-newletter .pnewle-message {
+                width: 100%;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+                #popup-newletter .pnewle-message span {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                    display: block;
+                    line-height: 1.5;
+                }
+
+                #popup-newletter .pnewle-message p {
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                    display: block;
+                }
+
+            #popup-newletter .pnewle-form .newsletter-input {
+                font-size: 12px;
+                font-style: italic;
+                height: 33px;
+                display: inline-block;
+                width: calc(100% - 75px);
+            }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 36px;
+            padding: 7px 12px;
+            font-size: 14px;
+            line-height: 1.42857;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+            -webkit-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+            transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+        }
+
+        #popup-newletter .pnewle-form .btn {
+            background-color: #000;
+            color: #fff;
+            font-style: italic;
+            font-size: 11px;
+            position: relative;
+            padding: 5px 12px;
+            display: inline-block;
+            width: 70px;
+            height: 33px;
+            vertical-align: top;
+            border-radius: 0;
+            outline: none;
+        }
+
+        .closePopup {
+            background: url(//theme.hstatic.net/1000363117/1000911694/14/fancybox_sprite.png?v=534) top left no-repeat;
+            border: none;
+            outline: none;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        @@media screen and (min-width: 1200px) {
+            .newletter-popup.engo-popup .content {
+                width: 550px;
+            }
+        }
+
+        @@media screen and (max-width: 991px) {
+            .box-home-aboutus .content {
+                width: 60%;
+            }
+        }
+
+        @@media screen and (max-width: 600px) {
+            .engo-popup .content {
+                padding: 10px;
+                width: 80%;
+            }
+        }
+        /* End popup*/
+        .modal-footer button {
+            background: #000;
+            color: #fff;
+        }
+
+        .ztitlemy {
+            font-weight: bold;
+        }
+    </style>
+    @*	<script src='//hstatic.net/0/0/global/api.jquery.js' type='text/javascript'></script>
+    <script src='//hstatic.net/0/0/global/option_selection.js' type='text/javascript'></script>
+    <script src='//theme.hstatic.net/1000363117/1000911694/14/fastclick.min.js?v=534' type='text/javascript'></script>
+    <script src='//theme.hstatic.net/1000363117/1000911694/14/script.js?v=534' type='text/javascript'></script>
+    <script src='//theme.hstatic.net/1000363117/1000911694/14/timber.js?v=534' type='text/javascript'></script>
+    <script src='//theme.hstatic.net/1000363117/1000911694/14/app-buyxgety.js?v=534' type='text/javascript'></script>*@
+    <script></script>
+    <script src='//theme.hstatic.net/1000363117/1000911694/14/handlebars.min.js?v=534' type='text/javascript'></script>
+
+    <!-- Owl carousel init -->
+    <!-- Back to top -->
+    <!-- quick view -->
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            transtion: all .5s;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 780px;
+            transform: translatey(-30px);
+            transition: all .5s;
+            width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            text-align: center;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+    <div class="modal" id="productQuickView">
+        <div class="modal-content">
+            <span id="close" class="close">&times;</span>
+            <form class="grid" id="form-quick-view">
+                <div class="grid__item large--five-tenths">
+                    <div class="image-zoom">
+                        <img id="p-product-image-feature" class="p-product-image-feature" src="">
+                        <div id="p-sliderproduct" class="flexslider">
+                            <ul class="slides"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item large--five-tenths pull-right">
+                    <h4 class="p-title   modal-title " id="">Tên sản phẩm</h4>
+                    <p class="product-more-info">
+                        <span class="product-sku">
+                            Mã sản phẩm: <span id="ProductSku">01923123</span>
+                        </span>
+                    </p>
+                    <div class="form-input product-price-wrapper">
+                        <div class="product-price">
+                            <span class="p-price "></span>
+                            <del></del>
+                        </div>
+                        <em id="PriceSaving"></em>
+                    </div>
+                    <div class="p-option-wrapper">
+                        <select name="id" class="" id="p-select-quickview"></select>
+                    </div>
+                    <div id="swatch-quick-view" class="select-swatch">
+                    </div>
+                    <div class="form-input hidden">
+                        <label>Số lượng</label>
+                        <input name="quantity" type="number" min="1" value="1" />
+                    </div>
+                    <div class="form-input" style="width: 100%">
+                        <button type="submit" class="btn btn-addcart" id="AddToCardQuickView">Thêm vào giỏ</button>
+                        <button disabled class="btn btn-soldout">Hết hàng</button>
+                        <div class="qv-readmore">
+                            <span> hoặc </span><a class="read-more p-url" href="" role="button">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="loading">
+            <div></div>
+        </div>
+    </div>
+
+    <style>
+        .grecaptcha-badge {
+            visibility: hidden;
+        }</style>
+
+
+    <script src='//theme.hstatic.net/1000363117/1000911694/14/handlebars.min.js?v=534' type='text/javascript'></script>
+
+    <script defer src='/public/user/js/beacon.min.js' hrv-beacon-t='1000363117'></script>
+     <script src="/lib/jquery/dist/jquery.min.js"></script>
+     <script src="/public/customer/js/bootstrap.min.js"></script>
+    
+    
+    <script src="~/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src='/public/user/js/modernizr.min.js?v=534' type='text/javascript'></script>
+    <script src='/public/user/js/owl.carousel.min.js?v=534' type='text/javascript'></script>
+   
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=vietnamese" rel="stylesheet">
+    <!-- Font Aweseome -->
+    <script defer src="/public/user/js/all.js"></script>
+    <script src="/public/user/js/lazyload.js"></script>
+    <script src="~/js/shared/shared.js"></script>
+
+    <script src="/public/user/js/342607342551944.js" async="async"></script>
+    
+
+    @RenderSection("Scripts", required: false)
+    <script type="text/javascript">
+            $(document).ready(function () {
+
+                $(".btn-search-stl").click(function () {
+                    var textSearch = $(".txt-search").val();
+                    if (textSearch != "") {
+                        window.location.href = '/san-pham-tim-kiem/timkiem=' + textSearch;
+                    }
+
+                    // Search(textSearch);
+                })
+
+                $(".txt-search").keypress(function (e) {
+                    if (e.which == 13) {
+                        var textSearch = $(".txt-search").val();
+                        if (textSearch != "") {
+                            window.location.href = '/san-pham-tim-kiem/timkiem=' + textSearch;
+                            return false;    //<---- Add this line
+                        }
+
+                    }
+                });
+
+                var timkiem = urlParam();
+
+                if (timkiem != null && timkiem != "") {
+                    var text = timkiem.split('=')[1];
+                    /*$(".tukhoatimkiem").text(text);*/
+                    $(".txt-search").text(text);
+                }
+            })
+        function urlParam() {
+            var results = new RegExp('timkiem=[^&#]*').exec(window.location.href);
+            if (results == null) {
+                return null;
+            }
+            return decodeURI(results[0]) || "";
+        }
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-home-main-slider").owlCarousel({
+                items: 1,
+                itemsDesktop: [1000, 1],
+                itemsDesktopSmall: [900, 1],
+                itemsTablet: [600, 1],
+                itemsMobile: false,
+                navigation: false,
+                pagination: true,
+                slideSpeed: 1000,
+                paginationSpeed: 1000,
+                autoPlay: 5000,
+                navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+            });
+
+        });
+    </script>
+     <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".btn-search-stl").click(function(){
+                var textSearch = $(".txt-search").val();
+                 if (textSearch !=""){
+                       window.location.href = '/san-pham-tim-kiem/timkiem=' + textSearch;
+                 }              
+            })
+
+            $(".txt-search").keypress(function (e) {
+              if (e.which == 13) {
+                var textSearch = $(".txt-search").val();
+                if (textSearch !=""){
+                      window.location.href = '/san-pham-tim-kiem/timkiem=' + textSearch;
+                return false;   
+                }
+              
+              }
+            });
+
+            var timkiem = urlParam();
+           
+            if(timkiem != null && timkiem != ""){
+                debugger;
+                var text = timkiem.split('=')[1];
+                $(".txt-search").val(text);
+            }
+        })
+        function urlParam(){
+            var results = new RegExp('timkiem=[^&#]*').exec(window.location.href);
+            if (results==null) {
+               return null;
+            }
+            return decodeURI(results[0]) || "";
+        }
+
+
+    </script>
+</body>
+</html>

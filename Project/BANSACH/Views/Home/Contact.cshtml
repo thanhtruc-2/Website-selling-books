@@ -1,0 +1,428 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    input.error {
+        border-color: #f00 !important;
+    }
+
+    label.error {
+        clear: both;
+        color: #f00;
+        display: block;
+        text-align: left;
+        margin: unset;
+        padding: unset;
+        font-size: 13px;
+        font-weight: unset !important;
+        background: unset;
+    }
+    .form-group[class*='has-icon-'] .form-control-icon{
+        transform: unset !important;
+        top: 10% !important;
+    }
+
+    .list-right {
+        width: 875px;
+        padding-left: 63px;
+        padding-top: 9px;
+    }
+
+    .help-list-main .help-list-con .list-right .listText-info * {
+        font-family: Arial !important;
+    }
+
+    .list-right .listText-info h2 {
+        width: 920px;
+        height: auto;
+        line-height: 28px;
+        font-size: 24px;
+        padding-left: 0;
+        color: #323232;
+        font-weight: 400;
+        margin-bottom: 36px;
+    }
+
+    .help-list-main .help-list-con .list-right .listText-info .text-box {
+        line-height: 20px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .help-list-main .bottom-help-list {
+        width: 100%;
+        padding: 0 16px 16px !important;
+        margin-top: 15px;
+        float: right;
+        box-sizing: border-box;
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    .contact-us-main {
+        padding-bottom: 100px;
+    }
+
+        .contact-us-main .wrap {
+            width: 100%;
+        }
+
+            .contact-us-main .wrap .contactus-step {
+                padding-left: 38px;
+                position: relative;
+            }
+
+                .contact-us-main .wrap .contactus-step:before {
+                    content: "";
+                    position: absolute;
+                    left: 12px;
+                    top: 0;
+                    width: 0;
+                    height: 100%;
+                    border-left: 1px solid #e4e4e4;
+                    border-right: 1px solid #e7e7e7;
+                }
+
+                .contact-us-main .wrap .contactus-step .step-title {
+                    font-size: 14px;
+                    color: #333;
+                    position: relative;
+                }
+
+                    .contact-us-main .wrap .contactus-step .step-title em {
+                        position: absolute;
+                        left: -38px;
+                        top: -7px;
+                        width: 26px;
+                        height: 26px;
+                        line-height: 26px;
+                        text-align: center;
+                        font-style: normal;
+                        border-radius: 50%;
+                        background: #333;
+                        font-size: 14px;
+                        color: #fff;
+                    }
+
+                .contact-us-main .wrap .contactus-step .step-con {
+                    padding-top: 30px;
+                    position: relative;
+                }
+
+                    .contact-us-main .wrap .contactus-step .step-con:before {
+                        content: "";
+                        z-index: 1;
+                        position: absolute;
+                        left: -30px;
+                        margin-top: 10px;
+                        top: 50%;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #ccc;
+                    }
+
+                    .contact-us-main .wrap .contactus-step .step-con .step-con-box {
+                        border: 1px solid #ddd;
+                    }
+
+                .contact-us-main .wrap .contactus-step .type-list {
+                    height: 198px;
+                }
+
+                .contact-us-main .wrap .contactus-step.step-1 .type-list li {
+                    list-style: none !important;
+                    margin-left: 0 !important;
+                }
+
+                .contact-us-main .wrap .contactus-step.step-1 .type-list li {
+                    float: left;
+                    width: 50%;
+                    padding: 10px;
+                    height: 100%;
+                    text-align: center;
+                    -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+                    border-right: 1px solid #ddd;
+                }
+
+    .list-right .listText-info .text-box h3 {
+        font-size: 18px;
+        color: #666;
+        font-weight: 400;
+        margin-top: 35px;
+        margin-bottom: 13px;
+    }
+
+    .help-list-main .help-list-con .list-right .listText-info .text-box p {
+        color: #333;
+    }
+</style>
+
+<section class="ftco-section ftco-degree-bg">
+    <div data-v-77c39cb3="" class="container">
+        <div>
+            <img src="/image-common/lien-he.png" style="height:500px;width:100%"/>
+        </div>
+        <div data-v-77c39cb3="" class="row">
+            <div data-v-77c39cb3="" class="col-lg-8">
+                <div class="list-right">
+
+
+
+                    <div class="listText-info" style="display:block">
+                        <div class="second-cate-listbox">
+                            <h2>Liên Hệ</h2>
+                            <div class="text-box">
+                                <div class="text-box-content">
+                                    <div class="contact-us-main">
+                                        <div class="wrap">
+                                            <div class="help-center-contactus">
+                                                <div class="contactus-step step-1">
+                                                    <div class="step-title"><em>1</em> <span>ĐỊA CHỈ SHOWROOM &amp; CHI NHÁNH</span></div>
+                                                    <div class="step-con">
+                                                        <div class="step-con-box">
+                                                            <ul class="type-list">
+                                                                <li>
+                                                                    <h3>Bán Sách Hà Nội</h3>
+                                                                    <p>Địa chỉ: Tầng 28 - Startup Tower, 91 Đại Mỗ, P. Đại Mỗ, Q. Nam Từ Liêm, HN</p>
+                                                                    <p>Email: hanoicn@sach.com</p>
+                                                                    <p>HOTLINE: 0979.856.374</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h3>Bán Sách Sài Gòn</h3>
+                                                                    <p>Địa chỉ: Quận 3</p>
+                                                                    <p>Email: hcmcn@sach.com</p>
+                                                                    <p>HOTLINE: 0934.082.445</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               @*  <div class="contactus-step contactus-step2 contactus-step2-ready">
+                                                    <div class="step-title"><em>2</em> <span>PHƯƠNG THỨC LIÊN LẠC</span></div>
+                                                    <div class="step-con">
+                                                        <div class="step-con-box">
+                                                            <ul class="result-list clearfix">
+                                                                <li class="message message-ready">
+                                                                    <div class="ricon">Liên Hệ Qua Facebook</div>
+                                                                    <div class="rinfo">
+                                                                        <p class="rtxt">Nhận được trả lời nhanh chóng cho câu hỏi của bạn!</p><a class="ajaxContactClick rbtn exclick" collected="1" href="http://m.me/giadungplus" target="_blank">Gửi tin nhắn</a>
+                                                                    </div>
+                                                                    <div class="reicon" style="display: block;">Đề xuất</div>
+                                                                </li>
+                                                                <li class="email email-ready">
+                                                                    <div class="ricon">Gửi Thư Mail</div>
+                                                                    <div class="rinfo">
+                                                                        <p class="rtxt">Mail: info@giadungplus.com</p>
+                                                                    </div>
+                                                                    <div class="reicon" style="display: none;">Đề xuất</div>
+                                                                </li>
+                                                                <li class="callus callus-ready">
+                                                                    <div class="ricon">Gọi cho chúng tôi</div>
+                                                                    <div class="rinfo">
+                                                                        <p class="rphone">0979 856 374</p>
+                                                                        <div class="rtxt">
+                                                                            <div class="tips-content">
+                                                                                <div class="tips-pop"><i class="sanjiao"></i></div>
+                                                                            </div>
+                                                                        </div><a class="ajaxContactClick rbtn" href="javascript:;" target="_blank">Gọi cho chúng tôi</a>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div> *@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               @*      <div class="bottom-help-list">
+                        <span class="slds-pill">
+                            <a class="slds-link" href="/trung-tam-ho-tro">
+                                <span class="slds-grid slds-wrap">
+                                    <span class="slds-col slds-truncate">
+                                        <span class="uiOutputText">Trung Tâm Hỗ Trợ</span>
+                                    </span>
+                                    <span class="slds-hide">
+                                        <span class="uiOutputText">
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>
+                        </span>
+                        <span class="slds-pill">
+                            <a class="slds-link" href="/lien-he">
+                                <span class="slds-grid slds-wrap">
+                                    <span class="slds-col slds-truncate">
+                                        <span class="uiOutputText">Thông Tin Liên Hệ</span>
+                                    </span>
+                                    <span class="slds-hide">
+                                        <span class="uiOutputText">
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>
+                        </span>
+                        <span class="slds-pill">
+                            <a class="slds-link" href="/">
+                                <span class="slds-grid slds-wrap">
+                                    <span class="slds-col slds-truncate">
+                                        <span class="uiOutputText">Trang Chủ</span>
+                                    </span>
+                                    <span class="slds-hide">
+                                        <span class="uiOutputText">
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>
+                        </span>
+                        <span class="slds-pill">
+                            <a class="slds-link" href="/ve-gia-dung-plus">
+                                <span class="slds-grid slds-wrap">
+                                    <span class="slds-col slds-truncate">
+                                        <span class="uiOutputText">Giới Thiệu Plus</span>
+                                    </span>
+                                    <span class="slds-hide">
+                                        <span class="uiOutputText">
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>
+                        </span>
+                    </div> *@
+                </div>
+            </div>
+
+            <div class="col-lg-4  text-center heading-section" style="margin-top: 116px;     padding-right: 100px;">
+                <h2 style="font-size: 31px; margin-bottom: 30px;">Liên hệ với chúng tôi</h2>
+                <div class="row d-flex justify-content-center">
+
+                    <form class="form form-vertical" action="#" method="#" id="contact">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Họ và tên" class="form-control" name="full_name" id="full_name"> <!---->
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Số điện thoại" class="form-control " name="phone" id="phone"> <!---->
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea rows="3" placeholder="Ghi chú" class="form-control" name="note" id="note"></textarea>
+                                    <!---->
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary button-send">Gửi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div  id="CartsModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalTitle" class="modal fade" aria-modal="true">
+   <div  role="document" class="modal-dialog">
+      <form id="form-submit" action="#">
+         <div  class="modal-content">
+            <div  class="modal-header bg-primary">
+               <h5  id="titleModal" class="modal-title white ">Bạn đã gửi liên hệ thành công</h5>
+               <button  type="button" data-dismiss="modal" aria-label="Close" class="close"><span  aria-hidden="true">×</span></button>
+            </div>
+            <div  class="modal-body">
+            </div>
+            <div  class="modal-footer">
+                @*<a href="/dang-nhap" class="btn btn-primary me-1 mb-1 btn-submit-format">OK</a>*@
+                <a href="javascript:void(0)" class="btn btn-primary me-1 mb-1 btn-submit-format" data-dismiss="modal">OK</a>
+                </div>
+         </div>
+      </form>
+   </div>
+</div>
+
+@section Scripts{
+    <script src="~/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        var self = this;
+        $(document).ready(function() {
+            ValidateUser();
+        })
+
+        function ValidateUser() {
+             jQuery.validator.addMethod("headphone", function (value, element) {
+                var vnf_regex = /((032|033|034|035|036|037|038|039|056|058|059|070|076|077|078|079|081|082|083|084|085|086|087|088|089|090|091|092|093|094|096|097|098|099)+([0-9]{7})\b)/g;
+                return vnf_regex.test(value);
+            });
+            $("#contact").validate({
+                rules:
+                {
+                    full_name: {
+                        required: true,
+                    },
+                    phone: {
+                        required: true,
+                        headphone: true,
+                        minlength: 10,
+                        min: 0,
+                        maxlength: 11,
+                        number: isNaN
+                    },
+                    note: {
+                        required: true
+                    }
+                },
+                messages:
+                {
+                    full_name: {
+                        required: "Số điện thoại không được để trống",
+                        headphone: "Số điện thoại không hợp lệ"
+                    },
+                    phone: {
+                        required: "Số điện thoại không được để trống",
+                        minlength:"Số điện thoại từ 10 đến 11 kí tự",
+                        maxlength: "Số điện thoại từ 10 đến 11 kí tự",
+                        headphone:"Số điện thoại không hợp lệ",
+                        number:"Số điện thoại không hợp lệ"
+                    },
+                    note: {
+                        required: "Ghi chú không được để trống"
+                    }
+                },
+                submitHandler: function(form) {
+                    var UserModelView={
+                        full_name: $("#full_name").val(),
+                        phone_number: $("#phone").val(),
+                        note: $("#note").val()
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "/Admin/Contract/Add",
+                        data: { UserModelView: UserModelView },
+                        beforeSend: function() {
+                            // tedu.start//Loading();
+                            Loading('show');
+                        },
+                        complete: function () {
+                             Loading('hide');
+                        },
+                        success: function(response) {
+                            if(response.success){
+                                $("#CartsModal").modal("show");                                
+                            }
+                        },
+                        error: function() {
+                            Loading('hide');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}
