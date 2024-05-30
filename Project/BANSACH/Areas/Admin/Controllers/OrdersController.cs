@@ -45,7 +45,7 @@ namespace TECH.Areas.Admin.Controllers
 
                     if (model.payment == 1)
                     {
-                        model.paymentstr = "Ship Cod";
+                        model.paymentstr = "Thanh toán khi nhận hàng";
                     }
                     else if (model.payment == 2)
                     {
@@ -57,7 +57,7 @@ namespace TECH.Areas.Admin.Controllers
                     }
                     else if (model.payment == 0)
                     {
-                        model.paymentstr = "Mua trực tiếp";
+                        model.paymentstr = "Thanh toán chuyển khoản";
                     }
 
                     var appuser = _appUserService.GetByid(model.user_id.Value);
@@ -117,7 +117,7 @@ namespace TECH.Areas.Admin.Controllers
 
                     if (model.payment == 1)
                     {
-                        model.paymentstr = "Ship Cod";
+                        model.paymentstr = "Thanh toán khi nhận hàng";
                     }
                     else if (model.payment == 2)
                     {
@@ -125,7 +125,7 @@ namespace TECH.Areas.Admin.Controllers
                     }
                     else if (model.payment == 0)
                     {
-                        model.paymentstr = "Mua trực tiếp";
+                        model.paymentstr = "Thanh toán chuyển khoản";
                     }
 
                     var appuser = _appUserService.GetByid(model.user_id.Value);
@@ -301,7 +301,7 @@ namespace TECH.Areas.Admin.Controllers
                         item.customerStr = appuser.full_name;
                         if (item.payment == 1)
                         {
-                            item.paymentstr = "Ship Cod";
+                            item.paymentstr = "Thanh toán khi nhận hàng";
                         }
                         else if (item.payment == 2)
                         {
@@ -309,7 +309,7 @@ namespace TECH.Areas.Admin.Controllers
                         }
                         else if (item.payment == 0)
                         {
-                            item.paymentstr = "Mua trực tiếp";
+                            item.paymentstr = "Thanh toán chuyển khoản";
                         }
                         else if (item.payment == 3)
                         {

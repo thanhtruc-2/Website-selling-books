@@ -15,68 +15,6 @@
 <div class="page-content">
     <section>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body px-3 py-4-5">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="stats-icon purple"><i class="iconly-boldPaper"></i></div>
-                            </div>
-                            <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Tổng bài viết</h6>
-                                <h6 class="font-extrabold mb-0">@Model.PostCount</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body px-3 py-4-5">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="stats-icon blue"><i class="iconly-boldProfile"></i></div>
-                            </div>
-                            <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Tài khoản</h6>
-                                <h6 class="font-extrabold mb-0">@Model.AppUserCount</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body px-3 py-4-5">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="stats-icon green"><i class="iconly-boldInfo-Circle"></i></div>
-                            </div>
-                            <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Tổng sản phẩm</h6>
-                                <h6 class="font-extrabold mb-0">@Model.ProductCount</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body px-3 py-4-5">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="stats-icon red"><i class="iconly-boldBookmark"></i></div>
-                            </div>
-                            <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Tổng danh mục</h6>
-                                <h6 class="font-extrabold mb-0">@Model.CategoryCount</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -84,18 +22,6 @@
                             <div class="col-md-8">
                                 <h4>Thống kê số lượng đơn hàng</h4>
                             </div>
-                            @*<div class="col-md-4">
-                                <button class="btn btn-primary btn-right"><i class="bi bi-arrow-repeat"></i></button> <button title="Tải xuống tệp Excel" class="btn btn-dark btn-right"><i class="bi bi-box-arrow-in-down"></i></button>
-                                <div class="form-group">
-                                    <select name="" id="" class="select-right form-select">
-                                        <option value="" disabled="disabled" selected="selected">Lọc theo thời gian</option>
-                                        <option value="1">Lọc theo ngày</option>
-                                        <option value="2">Lọc theo tháng</option>
-                                        <option value="3">Lọc theo năm</option>
-                                    </select>
-                                </div>
-
-                            </div>*@
                         </div>
                     </div>
 
@@ -106,6 +32,98 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body px-3 py-4-5">
+                        <div class="row" style="align-items: center;
+    height: 70px;
+    text-align: center;
+    background: #71af91;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;">
+                            <div class="col-md-8">
+                                @* <div class="stats-icon purple"><i class="iconly-boldPaper"></i></div> *@
+                                Tổng bài viết
+                            </div>
+                            <div class="col-md-4" style="height: 100%; display: inline-flex; align-items: center; justify-content:center">
+                                @* <h6 class="text-muted font-semibold">Tổng bài viết</h6> *@
+                                @Model.PostCount
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body px-3 py-4-5">
+                        <div class="row" style="align-items: center;
+    height: 70px;
+    text-align: center;
+        background: #ffc107;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;">
+                            <div class="col-md-8">
+                                @* <div class="stats-icon blue"><i class="iconly-boldProfile"></i></div> *@
+                                Tài khoản
+                            </div>
+                            <div class="col-md-4" style="height: 100%; display: inline-flex; align-items: center; justify-content:center">
+                                @* <h6 class="text-muted font-semibold">Tài khoản</h6> *@
+                                @Model.AppUserCount
+                               @*  <h6 class="font-extrabold mb-0">@Model.AppUserCount</h6> *@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body px-3 py-4-5">
+                        <div class="row" style="align-items: center;
+    height: 70px;
+    text-align: center;
+    background: #435ebe;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;">
+                            <div class="col-md-8">
+                                @* <div class="stats-icon green"><i class="iconly-boldInfo-Circle"></i></div> *@
+                                Tổng sản phẩm
+                            </div>
+                            <div class="col-md-4">
+                                @Model.ProductCount
+                                @* <h6 class="text-muted font-semibold">Tổng sản phẩm</h6> *@
+                                @* <h6 class="font-extrabold mb-0">@Model.ProductCount</h6> *@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body px-3 py-4-5">
+                        <div class="row" style="align-items: center;
+    height: 70px;
+    text-align: center;
+    background: red;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;">
+                            <div class="col-md-8">
+                                Tổng danh mục
+                                @* <div class="stats-icon red"><i class="iconly-boldBookmark"></i></div> *@
+                            </div>
+                            <div class="col-md-4">
+                                @Model.CategoryCount
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </section>
 </div>
 

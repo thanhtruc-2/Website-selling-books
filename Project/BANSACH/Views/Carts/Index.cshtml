@@ -79,7 +79,8 @@
                                                         <span class="fallback-text" aria-hidden="true">−</span>
                                                         <span class="visually-hidden">Giảm số lượng sản phẩm đi 1</span>
                                                     </button>
-                                                        <input type="number" class="js-qty__num input-number @classQuantiy" min="1" value="@item.quantity" aria-label="quantity" oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : 1" pattern="[0-9]*" name="quantity">
+                                                        @* <input type="text" class="tong-con-lai d-none" value="@item.productModelView.total_con_lai" /> *@
+                                                        <input type="number" class="js-qty__num input-number @classQuantiy" min="1" max="@item.productModelView.total_con_lai" value="@item.quantity" aria-label="quantity" oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : 1" pattern="[0-9]*" name="quantity">
                                                         <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text quantity-right-plus plus" onclick="addQuantity(@classQuantiy,@item.id)">
                                                         <span class="icon icon-plus" aria-hidden="true"></span>
                                                         <span class="fallback-text" aria-hidden="true">+</span>
@@ -159,14 +160,35 @@ else
       </form>
    </div>
 </div>
+<div id="categoryModalOverStock" tabindex="-1" role="dialog" aria-labelledby="categoryModalTitle" class="modal fade" aria-modal="true">
+    <div role="document" class="modal-dialog modal-dialog-centered">
+        <form id="form-submit" action="#" style="width: 100%;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 id="titleModal" class="modal-title white ">Số lượng mua vượt quá số lượng trong kho </h5>
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tổng số lượng còn lại trong kho là: <span class="soluongcong"></span></p>
+                </div>
+                <div class="modal-footer">
+                    @*<a href="/dang-nhap" class="btn btn-primary me-1 mb-1 btn-submit-format btn-success" style="border: none;color: #fff;">Đăng nhập</a>*@
+                    <a href="#" class="btn btn-primary me-1 mb-1 btn-submit-format" data-dismiss="modal" style="background: #ddd; border: none;color: black;">OK</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 @section Scripts{
         <script type="text/javascript">
     
     function addQuantity(className,id){
         var value = parseInt($("."+className).val());
-        if (value < 9999) {
-             value = value + 1;
+            var max = parseInt($('.' + className).attr('max'));
+            value = value + 1;
+            if (value <= max) {
+             
                 $("." + className).val(value);
                 $.ajax({
                     url: '/Carts/Update',
@@ -186,6 +208,10 @@ else
                     success: function (response) {
                         if (response.success && response.Data) {
                             $("." + className).text(response.Data.pricestr);
+                        } else if (response.overstock && response.tongsoconlai > 0) {
+                            $("#categoryModalOverStock").modal("show");
+                            $(".soluongcong").text(response.tongsoconlai);
+
                         }
                         //else{
                         //    $("#categoryModal").modal("show");
@@ -199,7 +225,8 @@ else
 
      function minusQuantity(className,id){
         var value = parseInt($("."+className).val());
-        if (value < 9999 && value >=2) {
+            var max = parseInt($("." + className).attr('max'));
+            if (value >1) {
             $("."+className).val(value - 1);
         }
         $.ajax({
@@ -220,7 +247,11 @@ else
             success: function (response) {
                 if (response.success && response.Data) {
                     $("." + className).text(response.Data.pricestr);
-                }
+                    } else if (response.overstock && response.tongsoconlai > 0) {
+                        $("#categoryModalOverStock").modal("show");
+                        $(".soluongcong").text(response.tongsoconlai);
+
+                    }
                 //if (response.success) {
                 //    $("#CartsModal").modal("show");
                 //}

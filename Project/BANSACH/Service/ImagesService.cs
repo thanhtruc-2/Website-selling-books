@@ -12,10 +12,13 @@ using TECH.Utilities;
 namespace TECH.Service
 {
     public interface IImagesService
-    {           
-        List<int> Add(List<string> view);
+    {
+        List<int> Add(List<ImageModelView> view);
+        //List<int> Add(List<string> view);
         bool Update(ImageModelView view);
         List<ImageModelView> GetImageName(List<int> imgaeId);
+        void AddImga(ImageModelView view);
+        List<ImageModelView> GetImageForProductId(int productId);
         bool Deleted(int id);
         void Remove(int id);
         void Save();
@@ -30,6 +33,60 @@ namespace TECH.Service
         {
             _imagesRepository = imagesRepository;
             _unitOfWork = unitOfWork;
+        }
+        public List<ImageModelView> GetImageForProductId(int productId)
+        {
+            if (productId > 0)
+            {
+                var lstImages = _imagesRepository.FindAll(p => p.product_id == productId).Select(p => new ImageModelView()
+                {
+                    id = p.id,
+                    name = p.name,
+                    product_id = p.product_id
+                }).ToList();
+                if (lstImages != null && lstImages.Count > 0)
+                {
+                    return lstImages;
+                }
+            }
+            return null;
+
+        }
+        //public List<ImageModelView> GetImageName(List<int> imgaeId)
+        //{
+        //    if (imgaeId != null && imgaeId.Count > 0)
+        //    {
+        //        var lstImages = _imagesRepository.FindAll(p => imgaeId.Contains(p.id)).Select(p => new ImageModelView()
+        //        {
+        //            id = p.id,
+        //            name = p.name
+        //        }).ToList();
+        //        if (lstImages != null && lstImages.Count > 0)
+        //        {
+        //            return lstImages;
+        //        }
+        //    }
+        //    return null;
+        //}
+
+        public void AddImga(ImageModelView view)
+        {
+            try
+            {
+                if (view != null)
+                {
+                    var appUser = new Images
+                    {
+                        name = view.name,
+                        product_id = view.product_id
+                    };
+                    _imagesRepository.Add(appUser);
+                    Save();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
         public List<ImageModelView> GetImageName(List<int> imgaeId)
         {
@@ -47,16 +104,17 @@ namespace TECH.Service
             }
             return null;
         }
-        public List<int> Add(List<string> view)
+        public List<int> Add(List<ImageModelView> view)
         {
             try
             {
-               
+
                 if (view != null && view.Count > 0)
                 {
-                    var listItem = view.Select(p=> new Images
+                    var listItem = view.Select(p => new Images
                     {
-                        name = p
+                        name = p.name,
+                        product_id = p.product_id
                     }).ToList();
                     foreach (var item in listItem)
                     {

@@ -12,5 +12,6 @@ namespace TECH.Areas.Admin.Models
         public int id { get; set; }
         public string? name { get; set; }
         public int? status { get; set; }
+        public int? product_id { get; set; }
     }
 }

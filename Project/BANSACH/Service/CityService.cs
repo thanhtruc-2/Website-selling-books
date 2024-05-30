@@ -13,7 +13,7 @@ namespace TECH.Service
 {
     public interface ICityService
     {      
-        List<CityModelView> GetAll();
+        //List<CityModelView> GetAll();
         CityModelView GetById(int id);
         CityModelView GetByName(string name);
     }
@@ -28,16 +28,16 @@ namespace TECH.Service
             _cityRepository = cityRepository;
             _unitOfWork = unitOfWork;
         }
-        public List<CityModelView> GetAll()
-        {
-            var data = _cityRepository.FindAll().Select(c=>new CityModelView()
-            {
-                id = c.id,
-                name = c.name
-            }).ToList();
+        //public List<CityModelView> GetAll()
+        //{
+        //    var data = _cityRepository.FindAll().Select(c=>new CityModelView()
+        //    {
+        //        id = c.id,
+        //        name = c.name
+        //    }).ToList();
 
-            return data;
-        }
+        //    return data;
+        //}
         public CityModelView GetById(int id)
         {
             var data = _cityRepository.FindAll(p => p.id == id).FirstOrDefault();

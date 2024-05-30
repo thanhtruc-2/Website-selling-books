@@ -50,8 +50,21 @@ namespace TECH.Controllers
             {
                 user = JsonConvert.DeserializeObject<UserModelView>(userString);
                 OrdersModelView.user_id = user.id;
-                OrdersModelView.code = "MDH00" + user.id.ToString() + DateTime.Now.Second.ToString();
-                var result = _ordersService.AddOrder(OrdersModelView);             
+                //OrdersModelView.code = "MDH00" + user.id.ToString() + DateTime.Now.Second.ToString();
+                int countOrder = _ordersService.GetCountOrder() + 1;
+                if (countOrder < 9)
+                {
+                    OrdersModelView.code = "MDH00" + countOrder;
+                }
+                else if (countOrder > 9 && countOrder <= 99)
+                {
+                    OrdersModelView.code = "MDH0" + countOrder;
+                }
+                else if (countOrder > 99 && countOrder <= 999)
+                {
+                    OrdersModelView.code = "MDH" + countOrder;
+                }
+                    var result = _ordersService.AddOrder(OrdersModelView);             
 
                 if (result > 0)
                 {
@@ -247,14 +260,14 @@ namespace TECH.Controllers
                     var data = _ordersService.GetOrderForUserId(user.id);
                     if (data != null && data.Count > 0)
                     {
-                        data = data.Where(p => p.status != 0).ToList();
+                        //data = data.Where(p => p.status != 0).ToList();
                         foreach (var item in data)
                         {
                             if (item != null && item.user_id.HasValue)
                             {
                                 if (item.payment == 1)
                                 {
-                                    item.paymentstr = "Ship Cod";
+                                    item.paymentstr = "Thanh toán khi nhận hàng";
                                 }
                                 else if (item.payment == 2)
                                 {
@@ -266,7 +279,7 @@ namespace TECH.Controllers
                                 }
                                 else if (item.payment == 0)
                                 {
-                                    item.paymentstr = "Mua trực tiếp";
+                                    item.paymentstr = "Thanh toán chuyển khoản";
                                 }
                             }
                             if (item.status == 0)
@@ -321,10 +334,13 @@ namespace TECH.Controllers
                                         }
                                     }
 
+                                    _product.total_con_lai = Math.Abs(_product.number_import.Value - (_product.total_sell.HasValue && _product.total_sell.Value > 0 ? _product.total_sell.Value : 0));
 
                                     item.productModelView = _product;
                                 }
                             }
+
+
                             //if (item.sizeId.HasValue && item.sizeId.Value > 0)
                             //{
                             //    var sizeData = _sizesService.GetByid(item.sizeId.Value);
@@ -466,14 +482,14 @@ namespace TECH.Controllers
                     var data = _ordersService.GetOrderForUserId(user.id);
                     if (data != null && data.Count > 0)
                     {
-                        data = data.Where(p => p.status == 0).ToList();
+                        //data = data.Where(p => p.status == 0).ToList();
                         foreach (var item in data)
                         {
                             if (item != null && item.user_id.HasValue)
                             {
                                 if (item.payment == 1)
                                 {
-                                    item.paymentstr = "Ship Cod";
+                                    item.paymentstr = "Thanh toán khi nhận hàng";
                                 }
                                 else if (item.payment == 2)
                                 {
@@ -485,7 +501,7 @@ namespace TECH.Controllers
                                 }
                                 else if (item.payment == 0)
                                 {
-                                    item.paymentstr = "Mua trực tiếp";
+                                    item.paymentstr = "Thanh toán chuyển khoản";
                                 }
                             }
                             if (item.status == 0)
@@ -555,7 +571,7 @@ namespace TECH.Controllers
 
             var userString = _httpContextAccessor.HttpContext.Session.GetString("UserInfor");
             bool overstock = false;
-            int tongsocon = 0;
+            //int tongsocon = 0;
             var user = new UserModelView();
             if (userString != null)
             {
@@ -565,26 +581,47 @@ namespace TECH.Controllers
                 {
 
                     cartsModelView.user_id = user.id;
+                    //var product = _productsService.GetByid(cartsModelView.product_id.Value);
+                    // thực hiện trừ đi trong database
                     if (cartsModelView.product_id.HasValue && cartsModelView.product_id.Value > 0)
                     {
+                        var product = _productsService.GetByid(cartsModelView.product_id.Value);
+                        int tongsocon = product.number_import.Value - (product.total_sell.HasValue && product.total_sell.Value > 0 ? product.total_sell.Value : 0);
+                        var soluongBan = cartsModelView.quantity.Value + (product.total_sell.HasValue && product.total_sell.Value > 0 ? product.total_sell.Value : 0);
+                        if (soluongBan > product.number_import.Value)
+                        {
+                            overstock = true;
+                            return Json(new
+                            {
+                                success = false,
+                                overstock = overstock,
+                                tongsoconlai = tongsocon
+                            });
+                        }
+
+                        product.total_sell = Math.Abs((product.total_sell.HasValue && product.total_sell.Value > 0 ? product.total_sell.Value : 0) + cartsModelView.quantity.Value);
+
                         var productExist = _cartsService.GetProductCart(user.id, cartsModelView.product_id.Value);
                         if (productExist != null && productExist.quantity.HasValue && productExist.quantity.Value > 0)
                         {
                             var qtyServer = productExist.quantity.Value + cartsModelView.quantity.Value;
-                            var product = _productsService.GetByid(cartsModelView.product_id.Value);
+
                             var price = productExist.price;
                             if (product != null && product.price_sell.HasValue && product.price_sell.Value > 0)
                             {
                                 price = productExist.price + cartsModelView.quantity.Value * product.price_sell.Value;
+
                             }
                             productExist.price = price;
                             productExist.quantity = qtyServer;
+
                             _cartsService.Update(productExist);
                         }
                         else
                         {
                             _cartsService.Add(cartsModelView);
                         }
+                        _productsService.Update(product);
                         _cartsService.Save();
                         return Json(new
                         {
@@ -619,6 +656,24 @@ namespace TECH.Controllers
                     if (cartsModelView.product_id.HasValue && cartsModelView.product_id.Value > 0)
                     {
                         var product = _productsService.GetByid(cartsModelView.product_id.Value);
+
+                        int soluongupdate = 0;
+                        var productExist = _cartsService.GetProductCart(user.id, cartsModelView.product_id.Value);
+                        if (productExist != null && productExist.quantity.HasValue && productExist.quantity.Value > 0)
+                        {
+                            //if (productExist.quantity.Value > cartsModelView.quantity.Value)
+                            //{
+                            //    soluongupdate = productExist.quantity.Value - cartsModelView.quantity.Value;
+                            //}
+                            //else
+                            //{
+                            //    soluongupdate = cartsModelView.quantity.Value - productExist.quantity.Value;
+                            //}
+                            product.total_sell = product.total_sell + (productExist.quantity.Value - cartsModelView.quantity.Value);
+                            _productsService.Update(product);
+                        }
+
+
                         if (product != null)
                         {
                             cartsModelView.price = Convert.ToInt32(product.price_sell) * cartsModelView.quantity.Value;
@@ -626,17 +681,17 @@ namespace TECH.Controllers
                         }
 
                     }
-                   
+
                     var result = _cartsService.Update(cartsModelView);
                     _cartsService.Save();
                     return Json(new
                     {
                         success = result,
-                        Data= cartsModelView
+                        Data = cartsModelView
                     });
                 }
             }
-          
+
             return Json(new
             {
                 success = false
@@ -654,6 +709,23 @@ namespace TECH.Controllers
                 user = JsonConvert.DeserializeObject<UserModelView>(userString);
                 if (user != null)
                 {
+                    var cart = _cartsService.GetById(id);
+                    var productExist = _productsService.GetByid(cart.product_id.Value);
+                    if (productExist != null && cart.quantity.HasValue && cart.quantity.Value > 0)
+                    {
+                        //if (productExist.quantity.Value > cartsModelView.quantity.Value)
+                        //{
+                        //    soluongupdate = productExist.quantity.Value - cartsModelView.quantity.Value;
+                        //}
+                        //else
+                        //{
+                        //    soluongupdate = cartsModelView.quantity.Value - productExist.quantity.Value;
+                        //}
+                        productExist.total_sell = productExist.total_sell - cart.quantity.Value;
+                        //product.total_sell = product.total_sell + (productExist.quantity.Value - cartsModelView.quantity.Value);
+                        _productsService.Update(productExist);
+                    }
+
                     var result = _cartsService.Deleted(id);
                     _cartsService.Save();
                     return Json(new
@@ -662,7 +734,6 @@ namespace TECH.Controllers
                     });
                 }
             }
-       
             return Json(new
             {
                 success = false

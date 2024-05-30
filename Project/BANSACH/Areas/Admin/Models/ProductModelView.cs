@@ -72,6 +72,8 @@ namespace TECH.Areas.Admin.Models
         public float startPercentFour { get; set; }
         public float startPercentFive { get; set; }
         public float startPercentThree { get; set; }
+        public int? total_sell { get; set; }
+        public int? total_con_lai { get; set; }
 
     }
     public class ProductViews

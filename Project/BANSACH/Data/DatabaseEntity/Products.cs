@@ -36,6 +36,6 @@ namespace TECH.Data.DatabaseEntity
 
         public int? number_import { get; set; }
         public int? cover_type { get; set; }
-
+        public int? total_sell { get; set; }
     }
 }

@@ -34,11 +34,12 @@
                 html += "<td>" + item.created_str + "</td>";
                 html += "<td>" + item.updated_str + "</td>";
                 html += "<td>" + item.status_str + "</td>";
+                html += "<td>" + (item.status == 0 ? "<input type='checkbox' checked  class=\"btn btn-dark custom-button\" onClick=UpdateStatus(" + item.id + ",1) />" : "<input type='checkbox'  class=\"btn btn-secondary custom-button\" onClick=UpdateStatus(" + item.id + ",0) />") + "</td>";     
                 html += "<td style=\"text-align: center;\">" +
 
-                    (item.status == 0 ? "<button  class=\"btn btn-dark custom-button\" onClick=UpdateStatus(" + item.id + ",1)><i class=\"bi bi-eye\"></i></button>" : "<button  class=\"btn btn-secondary custom-button\" onClick=UpdateStatus(" + item.id + ",0)><i class=\"bi bi-eye-slash\"></i></button>") +
-                    "<button  class=\"btn btn-primary custom-button\" onClick=Update(" + item.id + ")><i  class=\"bi bi-pencil-square\"></i></button>" +
-                    "<button  class=\"btn btn-danger custom-button\" onClick=\"Deleted(" + item.id + ")\"><i  class=\"bi bi-trash\"></i></button>" +
+                    //(item.status == 0 ? "<button  class=\"btn btn-dark custom-button\" onClick=UpdateStatus(" + item.id + ",1)><i class=\"bi bi-eye\"></i></button>" : "<button  class=\"btn btn-secondary custom-button\" onClick=UpdateStatus(" + item.id + ",0)><i class=\"bi bi-eye-slash\"></i></button>") +
+                    "<button  style=\"border: none; background: #fff;color: red; \" onClick=Update(" + item.id + ")><i  class=\"bi bi-pencil-square\"></i></button>" +
+                    "<button  style=\"border: none; background: #fff;color: red; \" onClick=\"Deleted(" + item.id + ")\"><i  class=\"bi bi-x\"></i></button>" +
                     "</td>";
 
                 html += "</tr>";

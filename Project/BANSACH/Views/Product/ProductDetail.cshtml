@@ -342,7 +342,7 @@
                                                                 <span class="fallback-text" aria-hidden="true">−</span>
                                                                 <span class="visually-hidden">Giảm số lượng sản phẩm đi 1</span>
                                                             </button>
-                                                            <input type="number" class="js-qty__num input-number" value="1" min="1"  aria-label="quantity" oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : 1" pattern="[0-9]*" name="quantity" id="quantity">
+                                                                            <input type="number" class="js-qty__num input-number" max="@Model.total_con_lai" value="1" min="1" aria-label="quantity" oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : 1" pattern="[0-9]*" name="quantity" id="quantity">
                                                             <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text quantity-right-plus plus" >
                                                                 <span class="icon icon-plus" aria-hidden="true"></span>
                                                                 <span class="fallback-text" aria-hidden="true">+</span>
@@ -353,7 +353,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <input type="text" class="tong-con-lai d-none" style="display:none" value="@Model.total_con_lai" />
 
                                          <a href="javascript:void(0)" class="btn btn-black py-3 px-5 btn-block btn-add-cart" style="color: #fff;font-weight: bold;">
                                                     MUA NGAY <i class="ion-ios-add ml-1"></i>
@@ -708,9 +708,11 @@
             })
             $(".plus").click(function () {
                 debugger;
+                var max = parseInt($(".tong-con-lai").val());
                 var value = parseInt($("#quantity").val());
-                if (value < 9999 && value >= 1) {
-                    $("#quantity").val(value + 1);
+                value = value + 1;
+                if (value <= max && value >= 1) {
+                    $("#quantity").val(value);
                 }
 
             })

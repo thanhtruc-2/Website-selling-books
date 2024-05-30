@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
 using TECH.Areas.Admin.Models;
 using TECH.Areas.Admin.Models.Search;
+using TECH.Data.DatabaseEntity;
 using TECH.Models;
 using TECH.Service;
 using TECH.Utilities;
@@ -69,14 +70,16 @@ namespace TECH.Controllers
                     if (item.category_id.HasValue && item.category_id.Value > 0)
                     {
                         var category = _categoryService.GetByid(item.category_id.Value);
-                        var productimages = _productsImagesService.GetImageProduct(item.id);
+                        var productimages = _imagesService.GetImageForProductId(item.id);
+
                         if (productimages != null && productimages.Count > 0)
                         {
-                            var lstImages = _imagesService.GetImageName(productimages);
-                            if (lstImages != null && lstImages.Count > 0)
-                            {
-                                item.avatar = lstImages[0].name;
-                            }
+                            //var lstImages = _imagesService.GetImageName(productimages);
+                            //if (lstImages != null && lstImages.Count > 0)
+                            //{
+                            //    item.avatar = lstImages[0].name;
+                            //}
+                            item.avatar = productimages[0].name;
                         }
                         if (category != null && !string.IsNullOrEmpty(category.name))
                         {
@@ -91,14 +94,15 @@ namespace TECH.Controllers
                     {
                         item.categorystr = "";
                     }
-                    var productImage = _productsImagesService.GetImageProduct(item.id);
+                    var productImage = _imagesService.GetImageForProductId(item.id);
                     if (productImage != null && productImage.Count > 0)
                     {
-                        var image = _imagesService.GetImageName(productImage);
-                        if (image != null && image.Count > 0)
-                        {
-                            item.ImageModelView = image;
-                        }
+                        //var image = _imagesService.GetImageName(productImage);
+                        //if (image != null && image.Count > 0)
+                        //{
+                        //    item.ImageModelView = image;
+                        //}
+                        item.ImageModelView = productImage;
                     }
                     item.trademark = !string.IsNullOrEmpty(item.trademark) ? item.trademark : "";
                     item.price_sell_str = item.price_sell.HasValue && item.price_sell.Value > 0 ? item.price_sell.Value.ToString("#,###") : "";
@@ -126,7 +130,7 @@ namespace TECH.Controllers
                     model.startThree = viewproduct.startThree;
                     model.startFour = viewproduct.startFour;
                     model.startFive = viewproduct.startFive;
-
+                    model.total_con_lai = model.number_import - (model.total_sell.HasValue && model.total_sell.Value > 0 ? model.total_sell.Value : 0);
 
                     model.starPercentOne = viewproduct.starPercentOne;
                     model.startPercentTwo = viewproduct.startPercentTwo;
@@ -136,14 +140,15 @@ namespace TECH.Controllers
                     if (model.category_id.HasValue && model.category_id.Value > 0)
                     {
                         var category = _categoryService.GetByid(model.category_id.Value);
-                        var productimages = _productsImagesService.GetImageProduct(model.id);
+                        var productimages = _imagesService.GetImageForProductId(model.id);
                         if (productimages != null && productimages.Count > 0)
                         {
-                            var lstImages = _imagesService.GetImageName(productimages);
-                            if (lstImages != null && lstImages.Count > 0)
-                            {
-                                model.avatar = lstImages[0].name;
-                            }
+                            //var lstImages = _imagesService.GetImageName(productimages);
+                            //if (lstImages != null && lstImages.Count > 0)
+                            //{
+                            //    model.avatar = lstImages[0].name;
+                            //}
+                            model.avatar = productimages[0].name;
                         }
                         if (category != null && !string.IsNullOrEmpty(category.name))
                         {
@@ -176,14 +181,15 @@ namespace TECH.Controllers
                     //    }
                     //    model.SizesModelView = lstSizeModel;
                     //}
-                    var productImage = _productsImagesService.GetImageProduct(model.id);
+                    var productImage = _imagesService.GetImageForProductId(model.id);
                     if (productImage != null && productImage.Count > 0)
                     {
-                        var image = _imagesService.GetImageName(productImage);
-                        if (image != null && image.Count > 0)
-                        {
-                            model.ImageModelView = image;
-                        }
+                        //var image = _imagesService.GetImageName(productImage);
+                        //if (image != null && image.Count > 0)
+                        //{
+                        //    model.ImageModelView = image;
+                        //}
+                        model.ImageModelView = productImage;
                     }
                     model.trademark = !string.IsNullOrEmpty(model.trademark) ? model.trademark : "";
                     model.price_sell_str = model.price_sell.HasValue && model.price_sell.Value > 0 ? model.price_sell.Value.ToString("#,###") : "";
@@ -219,14 +225,15 @@ namespace TECH.Controllers
                         if (item.category_id.HasValue && item.category_id.Value > 0)
                         {
                             var category = _categoryService.GetByid(item.category_id.Value);
-                            var productimages = _productsImagesService.GetImageProduct(item.id);
+                            var productimages = _imagesService.GetImageForProductId(item.id);
                             if (productimages != null && productimages.Count > 0)
                             {
-                                var lstImages = _imagesService.GetImageName(productimages);
-                                if (lstImages != null && lstImages.Count > 0)
-                                {
-                                    item.avatar = lstImages[0].name;
-                                }
+                                //var lstImages = _imagesService.GetImageName(productimages);
+                                //if (lstImages != null && lstImages.Count > 0)
+                                //{
+                                //    item.avatar = productimages[0].name;
+                                //}
+                                item.avatar = productimages[0].name;
                             }
                             if (category != null && !string.IsNullOrEmpty(category.name))
                             {
@@ -241,14 +248,15 @@ namespace TECH.Controllers
                         {
                             item.categorystr = "";
                         }
-                        var productImage = _productsImagesService.GetImageProduct(item.id);
+                        var productImage = _imagesService.GetImageForProductId(item.id);
                         if (productImage != null && productImage.Count > 0)
                         {
-                            var image = _imagesService.GetImageName(productImage);
-                            if (image != null && image.Count > 0)
-                            {
-                                item.ImageModelView = image;
-                            }
+                            //var image = _imagesService.GetImageName(productImage);
+                            //if (image != null && image.Count > 0)
+                            //{
+                            //    item.ImageModelView = image;
+                            //}
+                            item.ImageModelView = productImage;
                         }
                         item.trademark = !string.IsNullOrEmpty(item.trademark) ? item.trademark : "";
                         item.price_sell_str = item.price_sell.HasValue && item.price_sell.Value > 0 ? item.price_sell.Value.ToString("#,###") : "";
@@ -298,14 +306,15 @@ namespace TECH.Controllers
                     if (item.category_id.HasValue && item.category_id.Value > 0)
                     {
                         var category = _categoryService.GetByid(item.category_id.Value);
-                        var productimages = _productsImagesService.GetImageProduct(item.id);
+                        var productimages = _imagesService.GetImageForProductId(item.id);
                         if (productimages != null && productimages.Count > 0)
                         {
-                            var lstImages = _imagesService.GetImageName(productimages);
-                            if (lstImages != null && lstImages.Count > 0)
-                            {
-                                item.avatar = lstImages[0].name;
-                            }
+                            //var lstImages = _imagesService.GetImageName(productimages);
+                            //if (lstImages != null && lstImages.Count > 0)
+                            //{
+                            //    item.avatar = productimages[0].name;
+                            //}
+                            item.avatar = productimages[0].name;
                         }
                         if (category != null && !string.IsNullOrEmpty(category.name))
                         {
@@ -320,14 +329,15 @@ namespace TECH.Controllers
                     {
                         item.categorystr = "";
                     }
-                    var productImage = _productsImagesService.GetImageProduct(item.id);
+                    var productImage = _imagesService.GetImageForProductId(item.id);
                     if (productImage != null && productImage.Count > 0)
                     {
-                        var image = _imagesService.GetImageName(productImage);
-                        if (image != null && image.Count > 0)
-                        {
-                            item.ImageModelView = image;
-                        }
+                        //var image = _imagesService.GetImageName(productImage);
+                        //if (image != null && image.Count > 0)
+                        //{
+                        //    item.ImageModelView = image;
+                        //}
+                        item.ImageModelView = productImage;
                     }
                     item.trademark = !string.IsNullOrEmpty(item.trademark) ? item.trademark : "";
                     item.price_sell_str = item.price_sell.HasValue && item.price_sell.Value > 0 ? item.price_sell.Value.ToString("#,###") : "";
@@ -375,14 +385,15 @@ namespace TECH.Controllers
                     if (item.category_id.HasValue && item.category_id.Value > 0)
                     {
                         var category = _categoryService.GetByid(item.category_id.Value);
-                        var productimages = _productsImagesService.GetImageProduct(item.id);
+                        var productimages = _imagesService.GetImageForProductId(item.id);
                         if (productimages != null && productimages.Count > 0)
                         {
-                            var lstImages = _imagesService.GetImageName(productimages);
-                            if (lstImages != null && lstImages.Count > 0)
-                            {
-                                item.avatar = lstImages[0].name;
-                            }
+                            //var lstImages = _imagesService.GetImageName(productimages);
+                            //if (lstImages != null && lstImages.Count > 0)
+                            //{
+                            //    item.avatar = productimages[0].name;
+                            //}
+                            item.avatar = productimages[0].name;
                         }
                         if (category != null && !string.IsNullOrEmpty(category.name))
                         {
@@ -397,14 +408,15 @@ namespace TECH.Controllers
                     {
                         item.categorystr = "";
                     }
-                    var productImage = _productsImagesService.GetImageProduct(item.id);
+                    var productImage = _imagesService.GetImageForProductId(item.id);
                     if (productImage != null && productImage.Count > 0)
                     {
-                        var image = _imagesService.GetImageName(productImage);
-                        if (image != null && image.Count > 0)
-                        {
-                            item.ImageModelView = image;
-                        }
+                        //var image = _imagesService.GetImageName(productImage);
+                        //if (image != null && image.Count > 0)
+                        //{
+                        //    item.ImageModelView = image;
+                        //}
+                        item.ImageModelView = productImage;
                     }
                     item.trademark = !string.IsNullOrEmpty(item.trademark) ? item.trademark : "";
                     item.price_sell_str = item.price_sell.HasValue && item.price_sell.Value > 0 ? item.price_sell.Value.ToString("#,###") : "";

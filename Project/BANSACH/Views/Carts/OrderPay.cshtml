@@ -102,24 +102,25 @@
                             <div class="col-md-12">
                                 <div class="cart-detail bg-light p-3 p-md-4">
                                     <h3 class="billing-heading mb-4">Phương thức mua hàng</h3>
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <div class="radio">
-                                                <label><input type="radio" checked name="delivery" value="0" class="mr-2 delivery" /> Thanh toán chuyển khoản </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <div class="col-md-12">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="delivery" value="1" class="mr-2 delivery" />
-                                                    Phương thức vận chuyển
+                                                    <input type="radio" checked name="delivery" value="1" class="mr-2 delivery" />
+                                                    Thanh toán khi nhận hàng
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group box-content-image">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="radio">
+                                                <label><input type="radio" name="delivery" value="0" class="mr-2 delivery" /> Thanh toán chuyển khoản </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group box-content-image" style="display:none">
                                         <div class="col-md-12">
                                             <div class="box-image">
                                                 <img src="/image-side/qrcode.jpg" style="width: 300px;height: 250px;" />
@@ -243,12 +244,12 @@
     <script src="~/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script type="text/javascript">
         var self = this;
-        self.payment = 0;
-        self.delivery = 0
+        self.payment = 1;
+        self.delivery = 1;
         
         $(document).ready(function () {
 
-            GetAllCities();
+            // GetAllCities();
 
             //$(".delivery").change(function () {
             //    if ($(this).val() == 2) {
@@ -315,31 +316,31 @@
         }
 
 
-        function GetAllCities() {
-            $.ajax({
-                url: '/Admin/Fee/GetAllCity',
-                type: 'GET',
-                dataType: 'json',
-                beforeSend: function () {
-                    //Loading('show');
-                },
-                complete: function () {
-                    //Loading('hiden');
-                },
-                success: function (response) {
-                    var html = "<option value =\"\">Chọn thành phố</option>";
-                    if (response.Data != null && response.Data.length > 0) {
-                        self.Cities = response.Data;
-                        for (var i = 0; i < response.Data.length; i++) {
-                            var item = response.Data[i];
-                            html += "<option value =" + item.id + ">" + item.name + "</option>";
+        // function GetAllCities() {
+        //     $.ajax({
+        //         url: '/Admin/Fee/GetAllCity',
+        //         type: 'GET',
+        //         dataType: 'json',
+        //         beforeSend: function () {
+        //             //Loading('show');
+        //         },
+        //         complete: function () {
+        //             //Loading('hiden');
+        //         },
+        //         success: function (response) {
+        //             var html = "<option value =\"\">Chọn thành phố</option>";
+        //             if (response.Data != null && response.Data.length > 0) {
+        //                 self.Cities = response.Data;
+        //                 for (var i = 0; i < response.Data.length; i++) {
+        //                     var item = response.Data[i];
+        //                     html += "<option value =" + item.id + ">" + item.name + "</option>";
 
-                        }
-                    }
-                    $("#cities").html(html);
-                }
-            })
-        }
+        //                 }
+        //             }
+        //             $("#cities").html(html);
+        //         }
+        //     })
+        // }
         function GetDistrictForCityId(tag) {
             var cityId = $(tag).val();
             /*self.GetDistrictCityId(cityId);*/
@@ -512,7 +513,8 @@
                     }
                 },
                 submitHandler: function (form) {
-                    var _payment = $(".delivery").val();
+                    // var _payment = $(".delivery").val();
+                    debugger
                     var ordersModelView = {
                         note: $("#note").val(),
                         payment: self.payment,

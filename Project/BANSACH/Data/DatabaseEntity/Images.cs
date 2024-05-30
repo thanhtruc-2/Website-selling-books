@@ -15,5 +15,6 @@ namespace TECH.Data.DatabaseEntity
         [Column(TypeName = "nvarchar(400)")]
         public string? alt { get; set; }
         public int? status { get; set; }
+        public int? product_id { get; set; }
     }
 }

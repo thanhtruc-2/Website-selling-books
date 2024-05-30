@@ -68,6 +68,7 @@ namespace TECH.Service
                     status = data.status,
                     description = data.description,
                     number_import = data.number_import,
+                    total_sell = data.total_sell,
                     cover_type = data.cover_type,
                 };
                 return model;
@@ -147,6 +148,7 @@ namespace TECH.Service
                     dataServer.cover_type = view.cover_type;
                     dataServer.number_import = view.number_import;
                     dataServer.description = view.description;
+                    dataServer.total_sell = view.total_sell;
                     _productsRepository.Update(dataServer);                                        
                     return true;
                 }

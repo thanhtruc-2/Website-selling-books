@@ -39,15 +39,15 @@ namespace TECH.Areas.Admin.Controllers
             });
         }
 
-        [HttpGet]
-        public JsonResult GetAllCity()
-        {
-            var model = _cityService.GetAll();
-            return Json(new
-            {
-                Data = model
-            });
-        }
+        //[HttpGet]
+        //public JsonResult GetAllCity()
+        //{
+        //    var model = _cityService.GetAll();
+        //    return Json(new
+        //    {
+        //        Data = model
+        //    });
+        //}
 
         [HttpGet]
         public JsonResult GetAllDistricts()

@@ -70,13 +70,20 @@
                 html += "<td>" + item.number_import + "</td>";
                 html += "<td>" + item.cover_type_str + "</td>";
                 //html += "<td>" + item.price_reduced_str + "</td>";
+                //html += "<td style=\"text-align: center;\">" +
+
+                //    (item.ishidden == 0 ? "<button  class=\"btn btn-dark custom-button\" onClick=UpdateStatus(" + item.id + ",1)><i class=\"bi bi-eye custom-icon\"></i></button>" : "<button  class=\"btn btn-secondary custom-button\" onClick=UpdateStatus(" + item.id + ",0)><i class=\"bi bi-eye-slash custom-icon\"></i></button>") +
+                //    "<button  class=\"btn btn-primary custom-button\" onClick=\"UpdateView(" + item.id + ")\"><i  class=\"bi bi-pencil-square custom-icon\"></i></button>" +
+                //    //"<button  class=\"btn btn-success custom-button\" onClick=\"Quantity(" + item.id + ")\"><i  class=\"bi bi-calculator custom-icon\"></i></button>" +
+                //    "<button  class=\"btn btn-danger custom-button\" onClick=\"Deleted(" + item.id + ")\"><i  class=\"bi bi-trash custom-icon\"></i></button>" +
+
+                //    "</td>";
+                html += "<td>" + (item.ishidden == 0 ? "<input type='checkbox' checked  class=\"btn btn-dark custom-button\" onClick=UpdateStatus(" + item.id + ",1) />" : "<input type='checkbox'  class=\"btn btn-secondary custom-button\" onClick=UpdateStatus(" + item.id + ",0) />") + "</td>";
                 html += "<td style=\"text-align: center;\">" +
 
-                    (item.ishidden == 0 ? "<button  class=\"btn btn-dark custom-button\" onClick=UpdateStatus(" + item.id + ",1)><i class=\"bi bi-eye custom-icon\"></i></button>" : "<button  class=\"btn btn-secondary custom-button\" onClick=UpdateStatus(" + item.id + ",0)><i class=\"bi bi-eye-slash custom-icon\"></i></button>") +
-                    "<button  class=\"btn btn-primary custom-button\" onClick=\"UpdateView(" + item.id + ")\"><i  class=\"bi bi-pencil-square custom-icon\"></i></button>" +
-                    //"<button  class=\"btn btn-success custom-button\" onClick=\"Quantity(" + item.id + ")\"><i  class=\"bi bi-calculator custom-icon\"></i></button>" +
-                    "<button  class=\"btn btn-danger custom-button\" onClick=\"Deleted(" + item.id + ")\"><i  class=\"bi bi-trash custom-icon\"></i></button>" +
-
+                    //(item.status == 0 ? "<button  class=\"btn btn-dark custom-button\" onClick=UpdateStatus(" + item.id + ",1)><i class=\"bi bi-eye\"></i></button>" : "<button  class=\"btn btn-secondary custom-button\" onClick=UpdateStatus(" + item.id + ",0)><i class=\"bi bi-eye-slash\"></i></button>") +
+                    "<button  style=\"border: none; background: #fff;color: red; \" onClick=Update(" + item.id + ")><i  class=\"bi bi-pencil-square\"></i></button>" +
+                    "<button  style=\"border: none; background: #fff;color: red; \" onClick=\"Deleted(" + item.id + ")\"><i  class=\"bi bi-x\"></i></button>" +
                     "</td>";
 
                 html += "</tr>";

@@ -9881,11 +9881,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ADoAnDaiHoc\\BANSACH\\BANSACH\\BANSACH.csproj",
+      "projectUniqueName": "E:\\ADoAnDaiHoc\\26-05-2024\\BANSACH\\BANSACH\\BANSACH.csproj",
       "projectName": "BANSACH",
-      "projectPath": "E:\\ADoAnDaiHoc\\BANSACH\\BANSACH\\BANSACH.csproj",
+      "projectPath": "E:\\ADoAnDaiHoc\\26-05-2024\\BANSACH\\BANSACH\\BANSACH.csproj",
       "packagesPath": "C:\\Users\\DNC\\.nuget\\packages\\",
-      "outputPath": "E:\\ADoAnDaiHoc\\BANSACH\\BANSACH\\obj\\",
+      "outputPath": "E:\\ADoAnDaiHoc\\26-05-2024\\BANSACH\\BANSACH\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DNC\\AppData\\Roaming\\NuGet\\NuGet.Config",

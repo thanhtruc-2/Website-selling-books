@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sjMNwhxOQn7oGmZH266kTWqy6eh9EXB7M8wekPNY2ntXcslbc6++77+XhG631NqVVlgHylrLeo1fOUbVOeVkYw==",
+  "dgSpecHash": "ha1l0Bw/c6pdmEsrglBDuwAgXnG59p7ZTr2VDxj9PnEj1HkPMBz7hvb990Tp+BvYxCh4AnsD8cGINPCAteq+8Q==",
   "success": true,
-  "projectFilePath": "E:\\ADoAnDaiHoc\\BANSACH\\BANSACH\\BANSACH.csproj",
+  "projectFilePath": "E:\\ADoAnDaiHoc\\26-05-2024\\BANSACH\\BANSACH\\BANSACH.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DNC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\DNC\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

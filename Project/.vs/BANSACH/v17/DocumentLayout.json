@@ -1,0 +1,605 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\views\\product\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\views\\product\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\models\\cartsmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\models\\cartsmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\models\\productmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\models\\productmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\service\\productsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\service\\productsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\data\\databaseentity\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\data\\databaseentity\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\wwwroot\\admin\\orders\\orders.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\wwwroot\\admin\\orders\\orders.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\views\\carts\\orderprogress.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\views\\carts\\orderprogress.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\wwwroot\\admin\\product\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\wwwroot\\admin\\product\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\orders\\oderdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\orders\\oderdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\service\\ordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\service\\ordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\views\\carts\\orderpay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\views\\carts\\orderpay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\controllers\\feecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\controllers\\feecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\service\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\service\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\post\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\post\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\wwwroot\\admin\\post\\post.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\wwwroot\\admin\\post\\post.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\wwwroot\\admin\\appusers\\appusers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\wwwroot\\admin\\appusers\\appusers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\wwwroot\\admin\\category\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\wwwroot\\admin\\category\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\views\\appusers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\views\\appusers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\service\\reviewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\service\\reviewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\areas\\admin\\models\\reviewsmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\areas\\admin\\models\\reviewsmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\data\\databaseentity\\reviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\data\\databaseentity\\reviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\service\\cartsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\service\\cartsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|d:\\hoc-tap\\\u0111\u1ED3 \u00E1n\\ban-sach\\24-05\\bansach\\bansach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC82C1F-70E4-4287-9F22-F6CB06C00784}|BANSACH\\BANSACH.csproj|solutionrelative:bansach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartsModelView.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Models\\CartsModelView.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Models\\CartsModelView.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Models\\CartsModelView.cs",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Models\\CartsModelView.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAIwBMAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T10:16:05.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductModelView.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Models\\ProductModelView.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Models\\ProductModelView.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Models\\ProductModelView.cs",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Models\\ProductModelView.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAkwEsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Controllers\\CartsController.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Controllers\\CartsController.cs",
+              "RelativeToolTip": "BANSACH\\Controllers\\CartsController.cs",
+              "ViewState": "AQIAAEIBAAAAAAAAAAAUwFABAAC8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Carts\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Views\\Carts\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Carts\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Views\\Carts\\Index.cshtml",
+              "ViewState": "AQIAAM4AAAAAAAAAAAAAAN0AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T04:27:47.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "BANSACH\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAAAIEAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductDetail.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Product\\ProductDetail.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Views\\Product\\ProductDetail.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Product\\ProductDetail.cshtml",
+              "RelativeToolTip": "BANSACH\\Views\\Product\\ProductDetail.cshtml",
+              "ViewState": "AQIAALsCAAAAAAAAAAAAANACAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T13:26:06.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductsService.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\ProductsService.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Service\\ProductsService.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\ProductsService.cs",
+              "RelativeToolTip": "BANSACH\\Service\\ProductsService.cs",
+              "ViewState": "AQIAAH4AAAAAAAAAAAA0wJYAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T10:03:24.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Products.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Data\\DatabaseEntity\\Products.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Data\\DatabaseEntity\\Products.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Data\\DatabaseEntity\\Products.cs",
+              "RelativeToolTip": "BANSACH\\Data\\DatabaseEntity\\Products.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAowBoAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\appsettings.json",
+              "RelativeDocumentMoniker": "BANSACH\\appsettings.json",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\appsettings.json",
+              "RelativeToolTip": "BANSACH\\appsettings.json",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-24T14:09:38.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "post.js",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\post\\post.js",
+              "RelativeDocumentMoniker": "BANSACH\\wwwroot\\admin\\post\\post.js",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\post\\post.js",
+              "RelativeToolTip": "BANSACH\\wwwroot\\admin\\post\\post.js",
+              "ViewState": "AQIAACkAAAAAAAAAAAAIwEUAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T15:50:28.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OderDetail.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Orders\\OderDetail.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\Orders\\OderDetail.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Orders\\OderDetail.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\Orders\\OderDetail.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T15:51:24.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Orders\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\Orders\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Orders\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\Orders\\Index.cshtml",
+              "ViewState": "AQIAAJEAAAAAAAAAAAAmwKYAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T14:36:47.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "product.js",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\product\\product.js",
+              "RelativeDocumentMoniker": "BANSACH\\wwwroot\\admin\\product\\product.js",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\product\\product.js",
+              "RelativeToolTip": "BANSACH\\wwwroot\\admin\\product\\product.js",
+              "ViewState": "AQIAADwAAAAAAAAAAAAiwFgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T15:50:07.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "orders.js",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\orders\\orders.js",
+              "RelativeDocumentMoniker": "BANSACH\\wwwroot\\admin\\orders\\orders.js",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\orders\\orders.js",
+              "RelativeToolTip": "BANSACH\\wwwroot\\admin\\orders\\orders.js",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAAKUBAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T16:03:05.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OrdersService.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\OrdersService.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Service\\OrdersService.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\OrdersService.cs",
+              "RelativeToolTip": "BANSACH\\Service\\OrdersService.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAD4vxoAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T16:10:05.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAIwBEAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T02:42:48.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderProgress.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Carts\\OrderProgress.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Views\\Carts\\OrderProgress.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Carts\\OrderProgress.cshtml",
+              "RelativeToolTip": "BANSACH\\Views\\Carts\\OrderProgress.cshtml",
+              "ViewState": "AQIAAAUBAAAAAAAAAAAAACsBAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T04:27:52.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderPay.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Carts\\OrderPay.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Views\\Carts\\OrderPay.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Carts\\OrderPay.cshtml",
+              "RelativeToolTip": "BANSACH\\Views\\Carts\\OrderPay.cshtml",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAAAB8BAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T16:23:29.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "appusers.js",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\appusers\\appusers.js",
+              "RelativeDocumentMoniker": "BANSACH\\wwwroot\\admin\\appusers\\appusers.js",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\appusers\\appusers.js",
+              "RelativeToolTip": "BANSACH\\wwwroot\\admin\\appusers\\appusers.js",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwCoAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T15:27:08.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Post\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\Post\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Post\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\Post\\Index.cshtml",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAqwGoAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T14:37:11.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T14:50:10.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAiwLMAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T14:36:59.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Controllers\\OrdersController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAYwA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T16:09:48.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "BANSACH\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AQIAALEAAAAAAAAAAAAYwMcAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T13:26:06.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CityService.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\CityService.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Service\\CityService.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\CityService.cs",
+              "RelativeToolTip": "BANSACH\\Service\\CityService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T01:57:42.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FeeController.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Controllers\\FeeController.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Controllers\\FeeController.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Controllers\\FeeController.cs",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Controllers\\FeeController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAiwDYAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T01:59:45.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "category.js",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\category\\category.js",
+              "RelativeDocumentMoniker": "BANSACH\\wwwroot\\admin\\category\\category.js",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\wwwroot\\admin\\category\\category.js",
+              "RelativeToolTip": "BANSACH\\wwwroot\\admin\\category\\category.js",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T15:35:37.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAuwFsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T14:27:49.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAkwGIAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T13:26:06.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\AppUsers\\Index.cshtml",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Views\\AppUsers\\Index.cshtml",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Views\\AppUsers\\Index.cshtml",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Views\\AppUsers\\Index.cshtml",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAswHYAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T14:35:53.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ReviewsModelView.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Models\\ReviewsModelView.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Areas\\Admin\\Models\\ReviewsModelView.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Areas\\Admin\\Models\\ReviewsModelView.cs",
+              "RelativeToolTip": "BANSACH\\Areas\\Admin\\Models\\ReviewsModelView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ReviewsService.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\ReviewsService.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Service\\ReviewsService.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\ReviewsService.cs",
+              "RelativeToolTip": "BANSACH\\Service\\ReviewsService.cs",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAAwLcAAABqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Reviews.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Data\\DatabaseEntity\\Reviews.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Data\\DatabaseEntity\\Reviews.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Data\\DatabaseEntity\\Reviews.cs",
+              "RelativeToolTip": "BANSACH\\Data\\DatabaseEntity\\Reviews.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAUwB8AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BANSACH\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Program.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Program.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Program.cs",
+              "RelativeToolTip": "BANSACH\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CartsService.cs",
+              "DocumentMoniker": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\CartsService.cs",
+              "RelativeDocumentMoniker": "BANSACH\\Service\\CartsService.cs",
+              "ToolTip": "D:\\Hoc-Tap\\\u0110\u1ED3 \u00C1n\\Ban-Sach\\24-05\\BANSACH\\BANSACH\\Service\\CartsService.cs",
+              "RelativeToolTip": "BANSACH\\Service\\CartsService.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:26:06.457Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -25,6 +25,7 @@ namespace TECH.Service
         bool UpdateStatus(int id, int status);
         int AddOrder(OrdersModelView view);
         bool AddOrderDetail(OrdersDetailModelView view);
+        int GetCountOrder();
 
         List<OrdersDetailModelView> GetOrderDetails(int orderId);
 
@@ -45,6 +46,11 @@ namespace TECH.Service
             _ordersRepository = ordersRepository;
             _orderDetailsRepository = orderDetailsRepository;
             _unitOfWork = unitOfWork;
+        }
+        public int GetCountOrder()
+        {
+            var data = _ordersRepository.FindAll().ToList().Count;
+            return data;
         }
         public List<OrdersDetailModelView> GetOrderDetails(int orderId)
         {
@@ -110,7 +116,8 @@ namespace TECH.Service
                     phone_number = data.phone_number,
                     fee_ship = data.fee_ship,
                     created_at = data.created_at,
-                    code=data.code
+                    statusstr = (data.status.HasValue && data.status.Value == 1?"Đã hoàn thành":(data.status.HasValue && data.status.Value == 2?"Đã hủy":"Đang chờ xử lý")),
+                    code =data.code
                 };
                 return model;
             }
@@ -374,6 +381,7 @@ namespace TECH.Service
                     total = p.total,
                     totalstr = p.total.HasValue && p.total.Value > 0? p.total.Value.ToString("#,###"):"",
                     fee_ship = p.fee_ship,
+                    statusstr = (p.status.HasValue && p.status.Value == 1 ? "Đã hoàn thành" : (p.status.HasValue && p.status.Value == 2 ? "Đã hủy" : "Đang chờ xử lý")),
                     created_atstr = p.created_at.HasValue ? p.created_at.Value.ToString("hh:mm") + " - " + p.created_at.Value.ToString("dd/MM/yyyy") : "",
                 }).ToList();
               

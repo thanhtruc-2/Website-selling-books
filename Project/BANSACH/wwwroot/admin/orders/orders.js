@@ -1,6 +1,7 @@
 ﻿(function ($) {
     var self = this;
     self.Data = [];
+    self.OrderId = 0;
     self.IsUpdate = false;    
     self.Order = {
         id: null,
@@ -31,36 +32,38 @@
 
                 var htmlSelect = "";
                 if (item.status == 0) {
-                    htmlSelect = "<select  class='form-select ' onChange=UpdateStatus(" + item.id + ",this)>" +
-                        "<option  value = '0' selected> Đang chờ xử lý</option>" +
-                        "<option  value='1'>Đã hoàn thành</option>" +
-                        "<option  value='2'>Đã huỷ</option></select>";
+                    htmlSelect = "<div class=\"status-yellow\" onClick=UpdateStatus(" + item.id + ")>Đang chờ xử lý</div>";
+                    //htmlSelect = "<select  class='form-select ' onChange=UpdateStatus(" + item.id + ",this)>" +
+                    //    "<option  value = '0' selected> Đang chờ xử lý</option>" +
+                    //    "<option  value='1'>Đã hoàn thành</option>" +
+                    //    "<option  value='2'>Đã huỷ</option></select>";
                 }
                 else if (item.status == 1) {
-                    htmlSelect = "<select  class='form-select ' onChange=UpdateStatus(" + item.id + ",this)>" +
-                        "<option  value = '0' selected> Đang chờ xử lý</option>" +
-                        "<option  value='1' selected>Đã hoàn thành</option>" +
-                        "<option  value='2'>Đã huỷ</option></select>";
+                    htmlSelect = "<div class=\"status-green\" onClick=UpdateStatus(" + item.id + ")>Đã hoàn thành</div>";
+                    //htmlSelect = "<select  class='form-select ' onChange=UpdateStatus(" + item.id + ",this)>" +
+                    //    "<option  value = '0' selected> Đang chờ xử lý</option>" +
+                    //    "<option  value='1' selected>Đã hoàn thành</option>" +
+                    //    "<option  value='2'>Đã huỷ</option></select>";
                 }
                 else {
-                    htmlSelect = "<select  class='form-select  ' onChange=UpdateStatus(" + item.id + ",this)>" +
-                        "<option  value = '0' selected> Đang chờ xử lý</option>" +
-                        "<option  value='1' selected>Đã hoàn thành</option>" +
-                        "<option  value='2' selected>Đã huỷ</option></select>";
+                    htmlSelect = "<div class=\"status-red\" onClick=UpdateStatus(" + item.id + ")>Đã hủy</div>";
+                    //htmlSelect = "<select  class='form-select  ' onChange=UpdateStatus(" + item.id + ",this)>" +
+                    //    "<option  value = '0' selected> Đang chờ xử lý</option>" +
+                    //    "<option  value='1' selected>Đã hoàn thành</option>" +
+                    //    "<option  value='2' selected>Đã huỷ</option></select>";
                 }
 
                 html += "<tr>";
                 html += "<td>" + (++index) + "</td>";
-                /*html += "<td><a href=\"javascript: void (0)\" onClick=DetailOrder(" + item.id + ")>" + item.code + "</td>";*/
-                html += "<td><a href=\"javascript: void (0)\">" + item.code + "</td>";
+                html += "<td><a href=\"javascript: void (0)\" onClick=DetailOrder(" + item.id + ")>" + item.code + "</td>";
+                //html += "<td><a href=\"javascript: void (0)\">" + item.code + "</td>";
                 html += "<td>" + item.full_name + "</td>";
                 html += "<td>" + item.totalstr + "</td>";
-                html += "<td>" + item.paymentstr + "</td>"; 
+               
                 html += "<td>" + item.created_atstr + "</td>"; 
-                html += "<td style=\"text-align: center;\">" +
-                    htmlSelect
-                   +
-                    "</td>";
+                html += "<td>" + item.paymentstr + "</td>"; 
+                html += "<td>" + htmlSelect + "</td>"; 
+                html += "<td style=\"text-align: center;\"><a href=\"javascript:void(0)\" onClick=DetailOrder(" + item.id + ")>Xem chi tiết</a></td>";
                 
                 html += "</tr>";
             }
@@ -116,30 +119,32 @@
         }
     }
 
-    self.UpdateStatus = function (id, tag) {
-        var status = $(tag).val();
-        $.ajax({
-            url: '/Admin/Orders/UpdateStatus',
-            type: 'GET',
-            dataType: 'json',
-            data: {
-                id: id,
-                status: status
-            },
-            beforeSend: function () {
-                //Loading('show');
-            },
-            complete: function () {
-                ////Loading('hiden');
-            },
-            success: function (response) {
-                if (response.success) {
-                    //self.GetImageByProductId(id);
-                    self.GetDataPaging(true);
-                    tedu.notify('Cập nhật trạng thái thành công', 'success');
-                }
-            }
-        })
+    self.UpdateStatus = function (id) {
+        $("#confimOrder").modal("show");
+        self.OrderId = id;
+        //var status = $(tag).val();
+        //$.ajax({
+        //    url: '/Admin/Orders/UpdateStatus',
+        //    type: 'GET',
+        //    dataType: 'json',
+        //    data: {
+        //        id: id,
+        //        status: status
+        //    },
+        //    beforeSend: function () {
+        //        //Loading('show');
+        //    },
+        //    complete: function () {
+        //        ////Loading('hiden');
+        //    },
+        //    success: function (response) {
+        //        if (response.success) {
+        //            //self.GetImageByProductId(id);
+        //            self.GetDataPaging(true);
+        //            tedu.notify('Cập nhật trạng thái thành công', 'success');
+        //        }
+        //    }
+        //})
     }
 
     self.WrapPaging = function (recordCount, callBack, changePageSize) {
@@ -447,8 +452,35 @@
 
         self.GetDataPaging();
 
-       // self.ValidateUser();
-
+        // self.ValidateUser();
+        $(".btn-confirm-order").click(function () {
+            if (self.OrderId > 0) {
+                var status = parseInt($(".confirm-order").val());
+                $.ajax({
+                    url: '/Admin/Orders/UpdateStatus',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        id: self.OrderId,
+                        status: status
+                    },
+                    beforeSend: function () {
+                        //Loading('show');
+                    },
+                    complete: function () {
+                        ////Loading('hiden');
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            //self.GetImageByProductId(id);
+                            self.GetDataPaging(true);
+                            tedu.notify('Cập nhật trạng thái thành công', 'success');
+                        }
+                    }
+                })
+            }
+           
+        })
       
         $(".btn-addorupdate").click(function () {
             $(".custom-format").removeAttr("disabled");

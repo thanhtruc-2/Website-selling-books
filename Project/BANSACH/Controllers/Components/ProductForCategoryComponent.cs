@@ -52,14 +52,15 @@ namespace TECH.Controllers.Components
                             if (itemProduct.category_id.HasValue && itemProduct.category_id.Value > 0)
                             {
                                 var category = _categoryService.GetByid(itemProduct.category_id.Value);
-                                var productimages = _productsImagesService.GetImageProduct(itemProduct.id);
+                                var productimages = _imagesService.GetImageForProductId(itemProduct.id);
                                 if (productimages != null && productimages.Count > 0)
                                 {
-                                    var lstImages = _imagesService.GetImageName(productimages);
-                                    if (lstImages != null && lstImages.Count > 0)
-                                    {
-                                        itemProduct.avatar = lstImages[0].name;
-                                    }
+                                    //var lstImages = _imagesService.GetImageName(productimages);
+                                    //if (lstImages != null && lstImages.Count > 0)
+                                    //{
+                                    //    itemProduct.avatar = productimages[0].name;
+                                    //}
+                                    itemProduct.avatar = productimages[0].name;
                                 }
                                 if (category != null && !string.IsNullOrEmpty(category.name))
                                 {
@@ -75,14 +76,15 @@ namespace TECH.Controllers.Components
                             {
                                 itemProduct.categorystr = "";
                             }
-                            var productImage = _productsImagesService.GetImageProduct(itemProduct.id);
+                            var productImage = _imagesService.GetImageForProductId(itemProduct.id);
                             if (productImage != null && productImage.Count > 0)
                             {
-                                var image = _imagesService.GetImageName(productImage);
-                                if (image != null && image.Count > 0)
-                                {
-                                    itemProduct.ImageModelView = image;
-                                }
+                                //var image = _imagesService.GetImageName(productImage);
+                                //if (image != null && image.Count > 0)
+                                //{
+                                //    itemProduct.ImageModelView = productImage;
+                                //}
+                                itemProduct.ImageModelView = productImage;
                             }
                             itemProduct.trademark = !string.IsNullOrEmpty(itemProduct.trademark) ? itemProduct.trademark : "";
                             itemProduct.price_sell_str = itemProduct.price_sell.HasValue && itemProduct.price_sell.Value > 0 ? itemProduct.price_sell.Value.ToString("#,###") : "";
